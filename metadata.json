@@ -1,0 +1,6 @@
+{
+  "name": "LK Education Hub",
+  "description": "Premier authorized Tally & GST vocational training institute in Tirunelveli offering hands-on accounting mastery, TEPL certification, and career placement.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
