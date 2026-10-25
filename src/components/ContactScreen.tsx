@@ -16,6 +16,7 @@ import { WhatsAppIcon } from './ui/WhatsAppIcon';
 import { AnimatedRoadmap } from './ui/AnimatedRoadmap';
 import { CONTACT_INFO, openGeneralWhatsApp, triggerPhoneCall } from '../lib/contact';
 import { InquiryFormData } from '../types';
+import { Reveal } from './Reveal';
 
 export const ContactScreen: React.FC = () => {
   const [formData, setFormData] = useState<InquiryFormData>({
@@ -100,7 +101,7 @@ export const ContactScreen: React.FC = () => {
       <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Left Column: Campus Info Cards */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
+          <Reveal className="lg:col-span-5 flex flex-col gap-6">
             <div className="bg-surface-container-lowest rounded-2xl p-5 sm:p-8 shadow-sm border border-[#E5E7EB] flex flex-col gap-6">
               <h3 className="font-title-lg text-title-lg font-bold text-on-surface">
                 Campus Location
@@ -206,10 +207,10 @@ export const ContactScreen: React.FC = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* Right Column: Admission Inquiry Form */}
-          <div className="lg:col-span-7">
+          <Reveal delay={0.2} className="lg:col-span-7">
             <div className="bg-surface-container-lowest rounded-2xl p-8 sm:p-10 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
               {submitted ? (
                 <div className="p-8 text-center flex flex-col items-center gap-4">
@@ -363,7 +364,7 @@ export const ContactScreen: React.FC = () => {
                 </form>
               )}
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </div>

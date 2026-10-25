@@ -17,6 +17,7 @@ import {
   Network,
   Download
 } from 'lucide-react';
+import { Reveal } from './Reveal';
 
 interface AboutScreenProps {
   onNavigate: (path: string) => void;
@@ -100,7 +101,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
         <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {/* Stat 1: 10+ Years of Dedication */}
-            <div className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors">
+            <Reveal delay={0} className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors">
               <div className="flex items-baseline gap-1">
                 <AnimatedNumber
                   value={statsValue1}
@@ -118,10 +119,10 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
               <span className="font-body-sm text-body-sm text-on-surface-variant">
                 Training talent in South Tamil Nadu
               </span>
-            </div>
+            </Reveal>
 
             {/* Stat 2: 2,500+ Alumni Working Across India */}
-            <div className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors">
+            <Reveal delay={0.15} className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors">
               <div className="flex items-baseline gap-1">
                 <AnimatedNumber
                   value={statsValue2}
@@ -139,10 +140,10 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
               <span className="font-body-sm text-body-sm text-on-surface-variant">
                 Placed in leading firms and corporate sectors
               </span>
-            </div>
+            </Reveal>
 
             {/* Stat 3: 100% Practical Lab Curriculum */}
-            <div className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors">
+            <Reveal delay={0.3} className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors">
               <div className="flex items-baseline gap-1">
                 <AnimatedNumber
                   value={statsValue3}
@@ -160,10 +161,10 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
               <span className="font-body-sm text-body-sm text-on-surface-variant">
                 Dual-monitor real enterprise accounting
               </span>
-            </div>
+            </Reveal>
 
             {/* Stat 4: 94% Student Satisfaction Rate */}
-            <div className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors">
+            <Reveal delay={0.45} className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors">
               <div className="flex items-baseline gap-1">
                 <AnimatedNumber
                   value={statsValue4}
@@ -181,7 +182,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
               <span className="font-body-sm text-body-sm text-on-surface-variant">
                 Independent course exit survey ratings
               </span>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -191,7 +192,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
         <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Founder Portrait */}
-            <div className="lg:col-span-5 flex flex-col items-center">
+            <Reveal delay={0} className="lg:col-span-5 flex flex-col items-center">
               <div className="relative w-full max-w-sm aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container shadow-md border border-[#E5E7EB]">
                 <img
                   className="w-full h-full object-cover"
@@ -208,10 +209,10 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
                   </p>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
             {/* Founder Quote & Narrative */}
-            <div className="lg:col-span-7 flex flex-col gap-6">
+            <Reveal delay={0.2} className="lg:col-span-7 flex flex-col gap-6">
               <div className="inline-flex items-center gap-2">
                 <span className="font-serif text-secondary text-3xl font-black leading-none">“</span>
                 <span className="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase tracking-wider">
@@ -238,7 +239,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
                   </p>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -247,7 +248,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
         <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
           {/* Mission Headline Block */}
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center gap-6 mb-12 sm:mb-16">
+          <Reveal className="max-w-4xl mx-auto text-center flex flex-col items-center gap-6 mb-12 sm:mb-16">
             <span className="font-label-eyebrow text-label-eyebrow text-secondary uppercase tracking-widest font-bold">
               OUR PURPOSE
             </span>
@@ -255,12 +256,12 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
               “To empower every commerce student, job seeker, and small business owner in Southern Tamil Nadu with practical, verified accounting mastery and transparent career guidance.”
             </h2>
             <div className="w-20 h-1 bg-secondary rounded-full mt-2" />
-          </div>
+          </Reveal>
 
           {/* Three Core Pillars */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Pillar 1 */}
-            <div className="bg-surface-container-low rounded-xl p-8 flex flex-col gap-4 border border-[#E5E7EB] transition-transform hover:-translate-y-1">
+            <Reveal delay={0} className="bg-surface-container-low rounded-xl p-8 flex flex-col gap-4 border border-[#E5E7EB] transition-transform hover:-translate-y-1">
               <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary shadow-sm border border-[#E5E7EB]">
                 <Terminal className="w-6 h-6" />
               </div>
@@ -268,10 +269,10 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
               <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
                 Zero reliance on static slides. Over 80% of student learning hours are spent logging authentic vouchers, resolving discrepancies, and running real-world reports on verified Tally Prime instances.
               </p>
-            </div>
+            </Reveal>
 
             {/* Pillar 2 */}
-            <div className="bg-surface-container-low rounded-xl p-8 flex flex-col gap-4 border border-[#E5E7EB] transition-transform hover:-translate-y-1">
+            <Reveal delay={0.15} className="bg-surface-container-low rounded-xl p-8 flex flex-col gap-4 border border-[#E5E7EB] transition-transform hover:-translate-y-1">
               <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-secondary shadow-sm border border-[#E5E7EB]">
                 <ShieldCheck className="w-6 h-6" />
               </div>
@@ -279,10 +280,10 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
               <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
                 As an authorized TEPL training center, we enforce authentic assessment guidelines, verifiable digital credentials, and uncompromised curriculum benchmarks audited by Tally Education.
               </p>
-            </div>
+            </Reveal>
 
             {/* Pillar 3 */}
-            <div className="bg-surface-container-low rounded-xl p-8 flex flex-col gap-4 border border-[#E5E7EB] transition-transform hover:-translate-y-1">
+            <Reveal delay={0.3} className="bg-surface-container-low rounded-xl p-8 flex flex-col gap-4 border border-[#E5E7EB] transition-transform hover:-translate-y-1">
               <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-on-tertiary-container shadow-sm border border-[#E5E7EB]">
                 <Users className="w-6 h-6" />
               </div>
@@ -290,7 +291,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
               <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
                 We operate small batch sizes ensuring one-on-one attention from senior practitioners, complete with personalized interview coaching and continuous post-placement support.
               </p>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -300,7 +301,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
         <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Column: Lab Action Image */}
-            <div className="lg:col-span-6">
+            <Reveal className="lg:col-span-6">
               <div className="relative rounded-2xl overflow-hidden bg-surface-container shadow-sm aspect-[4/3] group border border-[#E5E7EB]">
                 <img
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -317,10 +318,10 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
                   </p>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
             {/* Right Column: Content */}
-            <div className="lg:col-span-6 flex flex-col gap-6">
+            <Reveal delay={0.2} className="lg:col-span-6 flex flex-col gap-6">
               <div className="inline-flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-secondary" />
                 <span className="font-label-eyebrow text-label-eyebrow text-secondary uppercase tracking-wider">
@@ -376,7 +377,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -386,7 +387,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
         <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Column: Strategic Content */}
-            <div className="lg:col-span-6 flex flex-col gap-6 order-2 lg:order-1">
+            <Reveal className="lg:col-span-6 flex flex-col gap-6 order-2 lg:order-1">
               <div className="inline-flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-secondary" />
                 <span className="font-label-eyebrow text-label-eyebrow text-secondary uppercase tracking-wider">
@@ -436,10 +437,10 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
                   </p>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
             {/* Right Column: Pipeline Diagram Graphic */}
-            <div className="lg:col-span-6 order-1 lg:order-2">
+            <Reveal delay={0.2} className="lg:col-span-6 order-1 lg:order-2">
               <div className="bg-surface-container-low rounded-xl p-6 sm:p-8 flex flex-col gap-6 border border-[#E5E7EB]">
                 <div className="flex items-center justify-between pb-4 border-b border-[#E5E7EB]">
                   <div className="flex flex-col">
@@ -532,7 +533,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
                   <span>100% updated for the latest Tally Prime 4.x features</span>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -541,7 +542,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
         <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
           {/* Section Header */}
-          <div className="flex flex-col items-center text-center gap-3 mb-12">
+          <Reveal className="flex flex-col items-center text-center gap-3 mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low border border-[#E5E7EB]">
               <span className="w-2 h-2 rounded-full bg-secondary" />
               <span className="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase tracking-wider">
@@ -554,13 +555,14 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
               Our mentors are active tax professionals, chartered accountant consultants, and certified Tally specialists with decades of combined corporate experience.
             </p>
-          </div>
+          </Reveal>
 
           {/* Trainer Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {FACULTY_DATA.map((trainer) => (
-              <div
+            {FACULTY_DATA.map((trainer, idx) => (
+              <Reveal
                 key={trainer.name}
+                delay={idx * 0.15}
                 className="bg-surface-container-low rounded-xl overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-md border border-[#E5E7EB]"
               >
                 <div className="aspect-[4/3] w-full overflow-hidden bg-surface-container">
@@ -592,7 +594,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
                     </span>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -603,7 +605,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
         <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left: Seal & Description */}
-            <div className="lg:col-span-8 flex flex-col gap-6">
+            <Reveal className="lg:col-span-8 flex flex-col gap-6">
               <div className="inline-flex items-center gap-2">
                 <span className="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-container font-label-eyebrow text-label-eyebrow font-bold uppercase tracking-wider flex items-center gap-1.5 border border-[#ffb95f]/40">
                   <ShieldCheck className="w-4 h-4" />
@@ -666,10 +668,10 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
             {/* Right: Digital Badge Visual */}
-            <div className="lg:col-span-4 flex flex-col items-center">
+            <Reveal delay={0.2} className="lg:col-span-4 flex flex-col items-center">
               <div className="w-full max-w-xs bg-surface-container-low rounded-2xl p-6 text-center flex flex-col items-center gap-4 shadow-sm border border-[#E5E7EB]">
                 <div className="w-20 h-20 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-container shadow-sm border border-[#ffb95f]/40">
                   <Award className="w-10 h-10 text-on-tertiary-container" />
@@ -693,14 +695,14 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* 9. Closing High Contrast Banner */}
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-12">
-        <div className="bg-primary text-on-primary rounded-lg p-10 sm:p-14 lg:p-16 text-center flex flex-col items-center gap-6 shadow-[0_12px_32px_-4px_rgba(0,0,0,0.18)]">
+        <Reveal className="bg-primary text-on-primary rounded-lg p-10 sm:p-14 lg:p-16 text-center flex flex-col items-center gap-6 shadow-[0_12px_32px_-4px_rgba(0,0,0,0.18)]">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-secondary-fixed" />
             <span className="font-label-eyebrow text-label-eyebrow text-surface-bright uppercase tracking-wider">
@@ -736,7 +738,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
               <span>Download Form</span>
             </a>
           </div>
-        </div>
+        </Reveal>
       </section>
     </div>
   );

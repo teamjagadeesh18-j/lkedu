@@ -22,6 +22,7 @@ import {
   Activity,
   UserCheck
 } from 'lucide-react';
+import { Reveal } from './Reveal';
 
 interface ResourcesScreenProps {
   onNavigate?: (path: string) => void;
@@ -127,7 +128,7 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
           ========================================================================= */}
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-12 lg:mb-16">
         <div className="bg-gradient-to-b from-[#f8faf7] via-white to-[#fcfdfc] rounded-3xl p-6 sm:p-10 border border-neutral-200/90 shadow-sm relative overflow-hidden">
-          <div className="text-center max-w-2xl mx-auto mb-8">
+          <Reveal className="text-center max-w-2xl mx-auto mb-8">
             <span className="text-[11px] font-bold text-secondary uppercase tracking-widest block mb-1">
               SYSTEM ARCHITECTURE
             </span>
@@ -137,10 +138,10 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
             <p className="text-xs sm:text-sm text-neutral-500 mt-1">
               Dual-screen candidate evaluation with real-time voucher verification, automatic rubrics, and biometric integrity.
             </p>
-          </div>
+          </Reveal>
 
           {/* Bespoke Accounting Assessment Vector Drawing */}
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl border border-neutral-200/90 shadow-md p-4 sm:p-8 relative">
+          <Reveal delay={0.2} className="max-w-4xl mx-auto bg-white rounded-2xl border border-neutral-200/90 shadow-md p-4 sm:p-8 relative">
             <svg
               viewBox="0 0 800 380"
               className="w-full h-auto"
@@ -284,7 +285,7 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
                 </g>
               </g>
             </svg>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -295,7 +296,7 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {/* Card 1: 38+ Years of Trust */}
-          <div className="bg-white rounded-3xl p-8 border border-neutral-200/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-lg transition-all text-left flex flex-col justify-between">
+          <Reveal delay={0} className="bg-white rounded-3xl p-8 border border-neutral-200/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-lg transition-all text-left flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center mb-6">
                 <CheckCircle2 className="w-6 h-6 stroke-[2]" />
@@ -311,10 +312,10 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
               <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
               <span>Standardized Enterprise Heritage</span>
             </div>
-          </div>
+          </Reveal>
 
           {/* Card 2: Scalability and Security */}
-          <div className="bg-white rounded-3xl p-8 border border-neutral-200/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-lg transition-all text-left flex flex-col justify-between">
+          <Reveal delay={0.15} className="bg-white rounded-3xl p-8 border border-neutral-200/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-lg transition-all text-left flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center mb-6">
                 <ShieldCheck className="w-6 h-6 stroke-[2]" />
@@ -330,10 +331,10 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
               <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
               <span>Bank-Grade Encryption & Audit Trails</span>
             </div>
-          </div>
+          </Reveal>
 
           {/* Card 3: Adaptability and Versatility */}
-          <div className="bg-white rounded-3xl p-8 border border-neutral-200/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-lg transition-all text-left flex flex-col justify-between">
+          <Reveal delay={0.3} className="bg-white rounded-3xl p-8 border border-neutral-200/90 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-lg transition-all text-left flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center mb-6">
                 <Layers className="w-6 h-6 stroke-[2]" />
@@ -349,7 +350,7 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
               <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
               <span>Low-Bandwidth Optimized Engine</span>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -358,7 +359,7 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
           Matching reference image middle section
           ========================================================================= */}
       <section id="platform-features" className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-16">
-        <div className="text-center max-w-2xl mx-auto mb-8">
+        <Reveal className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-[11px] font-bold text-secondary uppercase tracking-widest block mb-1">
             CORE CAPABILITIES
           </span>
@@ -368,10 +369,10 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
           <p className="text-neutral-500 text-xs sm:text-sm mt-2">
             Engineered to streamline question creation, candidate test-taking, and automated assessment reporting.
           </p>
-        </div>
+        </Reveal>
 
         {/* Feature Navigation Tabs (Matching Reference Image) */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-10 max-w-4xl mx-auto">
+        <Reveal delay={0.1} className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-10 max-w-4xl mx-auto">
           {featureTabs.map((tab, idx) => {
             const Icon = tab.icon;
             const isActive = activeTab === idx;
@@ -392,12 +393,12 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
               </button>
             );
           })}
-        </div>
+        </Reveal>
 
         {/* 5 Feature Cards Grid (Matching reference image cards) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 text-left">
           {/* Card 1: Question Bank Management */}
-          <div className="bg-white rounded-3xl p-7 border border-neutral-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <Reveal delay={0} className="bg-white rounded-3xl p-7 border border-neutral-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-700 flex items-center justify-center mb-4">
                 <FileSpreadsheet className="w-5 h-5" />
@@ -427,10 +428,10 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
             <div className="pt-4 mt-6 border-t border-neutral-100 text-[11px] font-semibold text-neutral-400">
               Excel / CSV / Question Paper Generator
             </div>
-          </div>
+          </Reveal>
 
           {/* Card 2: Powerful Test Taking Experience */}
-          <div className="bg-white rounded-3xl p-7 border border-neutral-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <Reveal delay={0.15} className="bg-white rounded-3xl p-7 border border-neutral-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center mb-4">
                 <Zap className="w-5 h-5" />
@@ -460,10 +461,10 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
             <div className="pt-4 mt-6 border-t border-neutral-100 text-[11px] font-semibold text-neutral-400">
               Clean, Distraction-Free Terminal UI
             </div>
-          </div>
+          </Reveal>
 
           {/* Card 3: Cross-Platform Support */}
-          <div className="bg-white rounded-3xl p-7 border border-neutral-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <Reveal delay={0.3} className="bg-white rounded-3xl p-7 border border-neutral-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-700 flex items-center justify-center mb-4">
                 <Monitor className="w-5 h-5" />
@@ -492,10 +493,10 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
             <div className="pt-4 mt-6 border-t border-neutral-100 text-[11px] font-semibold text-neutral-400">
               Web / Windows / macOS / Android Support
             </div>
-          </div>
+          </Reveal>
 
           {/* Card 4: Advanced Analytics & Reporting */}
-          <div className="bg-white rounded-3xl p-7 border border-neutral-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <Reveal delay={0} className="bg-white rounded-3xl p-7 border border-neutral-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-700 flex items-center justify-center mb-4">
                 <BarChart3 className="w-5 h-5" />
@@ -521,10 +522,10 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
             <div className="pt-4 mt-6 border-t border-neutral-100 text-[11px] font-semibold text-neutral-400">
               One-Click PDF Dossiers & CSV Analytics
             </div>
-          </div>
+          </Reveal>
 
           {/* Card 5: AI-Based Auto Proctoring */}
-          <div className="bg-white rounded-3xl p-7 border border-neutral-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <Reveal delay={0.15} className="bg-white rounded-3xl p-7 border border-neutral-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-700 flex items-center justify-center mb-4">
                 <Eye className="w-5 h-5" />
@@ -554,10 +555,10 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
             <div className="pt-4 mt-6 border-t border-neutral-100 text-[11px] font-semibold text-neutral-400">
               Continuous Webcam AI Surveillance
             </div>
-          </div>
+          </Reveal>
 
           {/* Card 6: Corporate & College Onboarding */}
-          <div className="bg-neutral-950 text-white rounded-3xl p-7 flex flex-col justify-between shadow-md">
+          <Reveal delay={0.3} className="bg-neutral-950 text-white rounded-3xl p-7 flex flex-col justify-between shadow-md">
             <div>
               <div className="w-10 h-10 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center mb-4">
                 <Award className="w-5 h-5" />
@@ -589,7 +590,7 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
               <span>Schedule Institutional Demo</span>
               <ArrowRight className="w-4 h-4" />
             </button>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -598,7 +599,7 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
           Creative showcase allowing visitors to experience a live question
           ========================================================================= */}
       <section className="max-w-5xl mx-auto w-full px-4 sm:px-6 mb-16">
-        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-neutral-200/90 shadow-sm text-left">
+        <Reveal className="bg-white rounded-3xl p-6 sm:p-10 border border-neutral-200/90 shadow-sm text-left">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 mb-6 border-b border-neutral-100 gap-4">
             <div>
               <span className="px-3 py-1 rounded-full text-[10px] font-bold bg-secondary/10 text-secondary uppercase tracking-wider inline-block mb-1">
@@ -694,7 +695,7 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
               })}
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* =========================================================================
@@ -706,7 +707,7 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
           <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-white/10 blur-2xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-black/5 blur-2xl pointer-events-none" />
 
-          <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center gap-4">
+          <Reveal className="relative z-10 max-w-2xl mx-auto flex flex-col items-center gap-4">
             <h2 className="text-2xl sm:text-4xl font-black text-neutral-900 tracking-tight">
               Ready to Modernize Candidate Assessments?
             </h2>
@@ -752,7 +753,7 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
                 Authorized TEPL Partner
               </span>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </div>

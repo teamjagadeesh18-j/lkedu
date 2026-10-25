@@ -3,6 +3,7 @@ import { ASSETS } from '../data/mockData';
 import { Phone } from 'lucide-react';
 import { WhatsAppIcon } from './ui/WhatsAppIcon';
 import { CONTACT_INFO, openGeneralWhatsApp } from '../lib/contact';
+import { Reveal } from './Reveal';
 
 interface FooterProps {
   onNavigate: (path: string) => void;
@@ -13,7 +14,7 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenVerify, onOpenCounselor }) => {
   return (
     <div className="w-full px-3 sm:px-6 mb-4 mt-12 sm:mt-20">
-      <footer className="max-w-7xl mx-auto bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB] overflow-hidden">
+      <Reveal as="footer" className="max-w-7xl mx-auto bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB] overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 pb-10">
           {/* Col 1: Brand Info */}
           <div className="flex flex-col gap-4">
@@ -195,7 +196,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenVerify, onOpen
             </button>
           </div>
         </div>
-      </footer>
+      </Reveal>
     </div>
   );
 };

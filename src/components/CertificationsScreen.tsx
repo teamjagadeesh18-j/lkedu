@@ -21,6 +21,7 @@ import {
   GraduationCap
 } from 'lucide-react';
 import { openEnrollWhatsApp } from '../lib/contact';
+import { Reveal } from './Reveal';
 
 interface CertificationsScreenProps {
   onNavigate: (path: string) => void;
@@ -132,7 +133,7 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
 
       {/* 2. THE CERTIFICATES GRID */}
       <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-12 sm:mb-16">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-6 px-1">
+        <Reveal className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-6 px-1">
           <div>
             <h2 className="text-xl sm:text-2xl font-bold text-on-surface">
               Featured Course Certificates
@@ -148,20 +149,21 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
             <ShieldCheck className="w-4 h-4 text-secondary shrink-0" />
             <span>Verify Any Credential</span>
           </button>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filteredCertificates.map((cert) => (
-            <CertificateCard
-              key={cert.id}
-              certificate={cert}
-              onEnlarge={(c) => {
-                setSelectedCertForModal(c);
-                setViewMode('vector');
-              }}
-              onVerify={(id) => onOpenVerify(id)}
-              onEnroll={(title) => openEnrollWhatsApp(title)}
-            />
+          {filteredCertificates.map((cert, idx) => (
+            <Reveal key={cert.id} delay={(idx % 6) * 0.15}>
+              <CertificateCard
+                certificate={cert}
+                onEnlarge={(c) => {
+                  setSelectedCertForModal(c);
+                  setViewMode('vector');
+                }}
+                onVerify={(id) => onOpenVerify(id)}
+                onEnroll={(title) => openEnrollWhatsApp(title)}
+              />
+            </Reveal>
           ))}
         </div>
 
@@ -189,7 +191,7 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-12 sm:mb-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1: Career Advancement */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
+          <Reveal delay={0} className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
             <div className="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 mb-4 group-hover:scale-110 transition-transform">
               <TrendingUp className="w-6 h-6" />
             </div>
@@ -199,10 +201,10 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
               Enhance your career prospects with Tally certification, unlocking opportunities in finance, auditing, and business analysis.
             </p>
-          </div>
+          </Reveal>
 
           {/* Card 2: Industry Recognized */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
+          <Reveal delay={0.15} className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
             <div className="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 mb-4 group-hover:scale-110 transition-transform">
               <Building2 className="w-6 h-6" />
             </div>
@@ -212,10 +214,10 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
               Master industry-standard accounting practices with Tally certification, ensuring you will be highly valued by businesses.
             </p>
-          </div>
+          </Reveal>
 
           {/* Card 3: Comprehensive Skills */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
+          <Reveal delay={0.3} className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
             <div className="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 mb-4 group-hover:scale-110 transition-transform">
               <ListChecks className="w-6 h-6" />
             </div>
@@ -225,24 +227,24 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
               Gain comprehensive skills with our certification, unlocking opportunities in bookkeeping, financial management, and business accounting.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* 4. KEY OFFERINGS (Heading + Second Row of 3 Cards) */}
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-16 lg:mb-20">
-        <div className="text-center mb-10">
+        <Reveal className="text-center mb-10">
           <h2 className="font-headline-lg text-headline-lg text-on-surface font-bold">
             Key Offerings
           </h2>
           <p className="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto mt-2">
             Integrated practical training ecosystem designed to prepare students for corporate roles from Day 1.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1: GST Compliance through Simulation */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
+          <Reveal delay={0} className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
             <div className="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 mb-4 group-hover:scale-110 transition-transform">
               <FileSpreadsheet className="w-6 h-6" />
             </div>
@@ -252,10 +254,10 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
               Navigate business tax intricacies with hands-on experience in GST compliance, returns, e-way bills, and e-invoicing.
             </p>
-          </div>
+          </Reveal>
 
           {/* Card 2: Online Internships */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
+          <Reveal delay={0.15} className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
             <div className="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 mb-4 group-hover:scale-110 transition-transform">
               <Monitor className="w-6 h-6" />
             </div>
@@ -265,10 +267,10 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
               Discover Tally online internships aligned with NEP 2020, offering experiential learning for real-world success.
             </p>
-          </div>
+          </Reveal>
 
           {/* Card 3: TallyPrime on Cloud */}
-          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
+          <Reveal delay={0.3} className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
             <div className="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 mb-4 group-hover:scale-110 transition-transform">
               <Cloud className="w-6 h-6" />
             </div>
@@ -278,13 +280,13 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
               Experience hands-on training with TallyPrime on Cloud, giving access to licensed software for continuous online learning.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* 5. BOTTOM ENROLLMENT BANNER */}
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
-        <div className="bg-primary text-white rounded-3xl p-8 sm:p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+        <Reveal className="bg-primary text-white rounded-3xl p-8 sm:p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
           <div className="max-w-xl text-center md:text-left">
             <span className="px-3 py-1 rounded-full bg-white/10 text-emerald-400 font-mono text-xs font-semibold mb-3 inline-block">
               Authorized Tirunelveli Training Center
@@ -312,7 +314,7 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
               <span>Browse All Syllabi</span>
             </button>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* 6. HIGH-RESOLUTION MODAL LIGHTBOX */}

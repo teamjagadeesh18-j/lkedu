@@ -355,3 +355,22 @@
   );
 }
 
+/* =========================================================================
+   SCROLL-TRIGGERED REVEAL ANIMATION (GPU-Accelerated, Zero CLS)
+   ========================================================================= */
+.reveal-wrapper {
+  /* GPU-accelerated: transform and opacity only */
+  will-change: opacity, transform;
+}
+
+/* Accessibility: respect prefers-reduced-motion: reduce by disabling animation and showing content immediately */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-wrapper,
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+

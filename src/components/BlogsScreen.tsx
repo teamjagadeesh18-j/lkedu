@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BLOG_POSTS } from '../data/mockData';
 import { BlogPost } from '../types';
+import { Reveal } from './Reveal';
 import {
   Search,
   Clock,
@@ -416,7 +417,7 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
               </div>
 
               {/* Mid-Article Callout Box (Matching Image 2) */}
-              <div className="bg-[#fef8e7] rounded-3xl p-6 sm:p-8 border border-[#fdeabf] my-12 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+              <Reveal className="bg-[#fef8e7] rounded-3xl p-6 sm:p-8 border border-[#fdeabf] my-12 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
                 <div className="flex items-center gap-4 text-left">
                   <div className="w-12 h-12 rounded-2xl bg-[#fcd99a]/40 text-[#92400e] flex items-center justify-center shrink-0">
                     <GraduationCap className="w-6 h-6" />
@@ -449,7 +450,7 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
                     </button>
                   )}
                 </div>
-              </div>
+              </Reveal>
             </div>
           </div>
         </section>
@@ -528,7 +529,7 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
 
         {/* 4. Programs to Boost Your Skills (Matching Image 2) */}
         <section className="max-w-5xl mx-auto w-full px-4 sm:px-6 mb-8">
-          <div className="text-center max-w-2xl mx-auto mb-8">
+          <Reveal className="text-center max-w-2xl mx-auto mb-8">
             <span className="text-[11px] font-bold text-neutral-400 uppercase tracking-widest block mb-1">
               CAREER UPSKILLING
             </span>
@@ -538,12 +539,13 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
             <p className="text-neutral-500 text-xs sm:text-sm mt-1">
               Ready to take your learning further? Explore our industry-focused programs.
             </p>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {relatedCourses.map((c, idx) => (
-              <div
+              <Reveal
                 key={idx}
+                delay={idx * 0.15}
                 className="rounded-3xl border border-neutral-200/90 overflow-hidden bg-white shadow-xs hover:shadow-md transition-all flex flex-col justify-between text-left"
               >
                 <div className={`p-6 ${c.theme.bg} border-b ${c.theme.border}`}>
@@ -569,7 +571,7 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
 
@@ -658,7 +660,7 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
 
       {/* 2. Blog Cards Grid */}
       <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-16">
-        <div className="flex items-center justify-between mb-6">
+        <Reveal className="flex items-center justify-between mb-6">
           <span className="text-xs font-bold text-neutral-400 uppercase tracking-widest">
             Showing {filteredPosts.length} Articles
           </span>
@@ -670,13 +672,14 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
               Clear filter
             </button>
           )}
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredPosts.map((post, index) => {
             const theme = BLOG_CARD_THEMES[index % BLOG_CARD_THEMES.length];
 
             return (
+              <Reveal key={post.id} delay={(index % 6) * 0.15}>
               <article
                 key={post.id}
                 onClick={() => {
@@ -712,6 +715,7 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
                   </div>
                 </div>
               </article>
+              </Reveal>
             );
           })}
         </div>
@@ -719,7 +723,7 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
 
       {/* 3. Browse by Category Section (Matching Image 1) */}
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-16">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <Reveal className="text-center max-w-2xl mx-auto mb-10">
           <span className="text-[11px] font-bold text-neutral-400 uppercase tracking-widest block mb-1">
             QUICK NAVIGATION
           </span>
@@ -729,7 +733,7 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
           <p className="text-neutral-500 text-xs sm:text-sm mt-2">
             Explore articles tailored to your career milestones and skill priorities.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {[
@@ -754,8 +758,8 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
               cat: 'Tally Tips'
             }
           ].map((item, idx) => (
+            <Reveal key={idx} delay={idx * 0.15}>
             <button
-              key={idx}
               type="button"
               onClick={() => {
                 setSelectedCategory(item.cat);
@@ -770,6 +774,7 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
                 {item.desc}
               </span>
             </button>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -777,7 +782,7 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
       {/* 4. Newsletter / Subscription Banner (Matching Image 1) */}
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-12">
         <div className="bg-neutral-950 text-white rounded-3xl p-8 sm:p-14 text-center relative overflow-hidden shadow-xl border border-neutral-900">
-          <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center gap-4">
+          <Reveal className="relative z-10 max-w-2xl mx-auto flex flex-col items-center gap-4">
             <span className="inline-flex items-center gap-1.5 text-xs font-bold text-secondary uppercase tracking-widest">
               <Mail className="w-3.5 h-3.5" /> LK ACADEMIC NEWSLETTER
             </span>
@@ -810,13 +815,13 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
             <span className="text-[11px] text-neutral-500">
               No spam ever. Unsubscribe at any time with one click.
             </span>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* 5. Institutional Bottom Callout Card (Matching Image 1) */}
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8">
-        <div className="bg-[#fef8e7] rounded-3xl p-6 sm:p-10 border border-[#fdeabf] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
+        <Reveal className="bg-[#fef8e7] rounded-3xl p-6 sm:p-10 border border-[#fdeabf] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
           <div className="flex items-center gap-4 text-left">
             <div className="w-12 h-12 rounded-2xl bg-[#fcd99a]/40 text-[#92400e] flex items-center justify-center shrink-0">
               <GraduationCap className="w-6 h-6" />
@@ -849,7 +854,7 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
               </button>
             )}
           </div>
-        </div>
+        </Reveal>
       </section>
     </div>
   );

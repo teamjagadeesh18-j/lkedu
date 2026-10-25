@@ -202,6 +202,7 @@ import { WhatsAppIcon } from './ui/WhatsAppIcon';
 import { openEnrollWhatsApp } from '../lib/contact';
 import { AnimatedRoadmap } from './ui/AnimatedRoadmap';
 import { AnimatedLabLearning } from './ui/AnimatedLabLearning';
+import { Reveal } from './Reveal';
 
 const HOME_COURSE_THEMES: Record<string, {
   bgHeader: string;
@@ -592,7 +593,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
         <div className="bg-surface-container-lowest rounded-2xl p-5 sm:p-8 lg:p-10 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {/* Stat 1: 1,200+ Students Placed */}
-            <div className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors">
+            <Reveal
+              delay={0}
+              className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors"
+            >
               <div className="flex items-baseline gap-1">
                 <AnimatedNumber
                   value={statsValue1}
@@ -610,10 +614,13 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               <span className="font-body-sm text-body-sm text-on-surface-variant">
                 Placed in leading firms & corporate sectors
               </span>
-            </div>
+            </Reveal>
 
             {/* Stat 2: 300+ Hiring Partners */}
-            <div className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors">
+            <Reveal
+              delay={0.15}
+              className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors"
+            >
               <div className="flex items-baseline gap-1">
                 <AnimatedNumber
                   value={statsValue2}
@@ -631,10 +638,13 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               <span className="font-body-sm text-body-sm text-on-surface-variant">
                 Active enterprise accounting network
               </span>
-            </div>
+            </Reveal>
 
             {/* Stat 3: 95% Placement Success Rate */}
-            <div className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors">
+            <Reveal
+              delay={0.3}
+              className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors"
+            >
               <div className="flex items-baseline gap-1">
                 <AnimatedNumber
                   value={statsValue3}
@@ -652,10 +662,13 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               <span className="font-body-sm text-body-sm text-on-surface-variant">
                 Verified candidate job transition
               </span>
-            </div>
+            </Reveal>
 
             {/* Stat 4: 12+ Years of Placement Support */}
-            <div className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors">
+            <Reveal
+              delay={0.45}
+              className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors"
+            >
               <div className="flex items-baseline gap-1">
                 <AnimatedNumber
                   value={statsValue4}
@@ -673,7 +686,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               <span className="font-body-sm text-body-sm text-on-surface-variant">
                 Dedicated counseling & lab mentorship
               </span>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -682,13 +695,15 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           2B. HIRING PARTNERS MARQUEE SCROLLER
           ========================================================================= */}
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
-        <MarqueeLogoScroller
-          title="Top Corporate Hiring Partners"
-          description="Leading multinational technology enterprises, nationalized banking networks, and Big-4 audit consultancies actively recruiting LK Educations certified candidates."
-          logos={RECRUITER_LOGOS}
-          speed="normal"
-          className="bg-surface-container-lowest border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] rounded-2xl"
-        />
+        <Reveal delay={0.1}>
+          <MarqueeLogoScroller
+            title="Top Corporate Hiring Partners"
+            description="Leading multinational technology enterprises, nationalized banking networks, and Big-4 audit consultancies actively recruiting LK Educations certified candidates."
+            logos={RECRUITER_LOGOS}
+            speed="normal"
+            className="bg-surface-container-lowest border border-[#E5E7EB] shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] rounded-2xl"
+          />
+        </Reveal>
       </section>
 
       {/* =========================================================================
@@ -696,7 +711,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           ========================================================================= */}
       <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
         <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
-          <div className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-8 sm:mb-12">
+          <Reveal className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
               <span className="w-2 h-2 rounded-full bg-secondary" />
               <span className="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase tracking-wider">
@@ -711,17 +726,18 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <p className="font-body-md text-body-md text-on-surface-variant">
               Industry-standard modules designed with practical ledger exercises and live GST portal entries.
             </p>
-          </div>
+          </Reveal>
 
           {/* Grid of 3 Featured Course Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {featuredCourses.map((course) => {
+            {featuredCourses.map((course, idx) => {
               const theme = HOME_COURSE_THEMES[course.id] || DEFAULT_HOME_THEME;
               const isExpanded = expandedCourse === course.id;
 
               return (
-                <div
+                <Reveal
                   key={course.id}
+                  delay={idx * 0.15}
                   className={`flex flex-col rounded-3xl border ${theme.borderColor} overflow-hidden bg-white shadow-[0_4px_20px_-2px_rgba(17,24,39,0.05)] hover:shadow-[0_20px_40px_-4px_rgba(17,24,39,0.12)] transition-all duration-300 hover:-translate-y-1.5 group`}
                 >
                   {/* Top Tinted Pastel Header matching Programs screen */}
@@ -799,13 +815,13 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                       </button>
                     </div>
                   </div>
-                </div>
+                </Reveal>
               );
             })}
           </div>
 
           {/* Prominent Redirect Button to the Entire Programs Page */}
-          <div className="flex flex-col items-center justify-center gap-3 mt-12 pt-8 border-t border-[#E5E7EB]">
+          <Reveal delay={0.2} className="flex flex-col items-center justify-center gap-3 mt-12 pt-8 border-t border-[#E5E7EB]">
             <button
               type="button"
               onClick={() => onNavigate('programs')}
@@ -817,7 +833,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <p className="text-xs text-neutral-500 text-center">
               Explore specialized certifications in TDS, Corporate Payroll, TDL, BRS, and Crash Modules on the Programs page.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -826,7 +842,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           ========================================================================= */}
       <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
         <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB] overflow-hidden">
-          <div className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-8 sm:mb-12">
+          <Reveal className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
               <span className="w-2 h-2 rounded-full bg-secondary" />
               <span className="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase tracking-wider">
@@ -855,13 +871,16 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <p className="font-body-md text-body-md text-on-surface-variant max-w-xl text-balance">
               Experience our proven step-by-step pathway from your first spark of curiosity, through practical dual-screen lab mastery, to earning verifiable TEPL certification and landing your dream job.
             </p>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Column: 3 Structured Progress Steps */}
             <div className="lg:col-span-6 flex flex-col gap-4">
               {/* Step 1 */}
-              <div className="bg-surface-container-low rounded-2xl p-6 sm:p-7 border border-[#E5E7EB] flex flex-col gap-3 hover:border-black/20 transition-all">
+              <Reveal
+                delay={0}
+                className="bg-surface-container-low rounded-2xl p-6 sm:p-7 border border-[#E5E7EB] flex flex-col gap-3 hover:border-black/20 transition-all"
+              >
                 <div className="flex items-center justify-between">
                   <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center font-bold text-on-surface text-xs border border-[#E5E7EB] shadow-xs">
                     01
@@ -892,10 +911,13 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                     <span>Enroll on WhatsApp</span>
                   </button>
                 </div>
-              </div>
+              </Reveal>
 
               {/* Step 2 */}
-              <div className="bg-surface-container-low rounded-2xl p-6 sm:p-7 border border-[#E5E7EB] flex flex-col gap-3 hover:border-black/20 transition-all">
+              <Reveal
+                delay={0.15}
+                className="bg-surface-container-low rounded-2xl p-6 sm:p-7 border border-[#E5E7EB] flex flex-col gap-3 hover:border-black/20 transition-all"
+              >
                 <div className="flex items-center justify-between">
                   <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center font-bold text-on-surface text-xs border border-[#E5E7EB] shadow-xs">
                     02
@@ -919,10 +941,13 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                     <span>Explore 12 Course Syllabi</span>
                   </button>
                 </div>
-              </div>
+              </Reveal>
 
               {/* Step 3 */}
-              <div className="bg-surface-container-low rounded-2xl p-6 sm:p-7 border border-[#E5E7EB] flex flex-col gap-3 hover:border-black/20 transition-all">
+              <Reveal
+                delay={0.3}
+                className="bg-surface-container-low rounded-2xl p-6 sm:p-7 border border-[#E5E7EB] flex flex-col gap-3 hover:border-black/20 transition-all"
+              >
                 <div className="flex items-center justify-between">
                   <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center font-bold text-on-surface text-xs border border-[#E5E7EB] shadow-xs">
                     03
@@ -946,13 +971,13 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                     <span>Verify Credential Authenticity</span>
                   </button>
                 </div>
-              </div>
+              </Reveal>
             </div>
 
             {/* Right Column: Looping Animated Illustration (Seamlessly blending onto white canvas) */}
-            <div className="lg:col-span-6 flex flex-col items-center justify-center">
+            <Reveal delay={0.25} className="lg:col-span-6 flex flex-col items-center justify-center">
               <AnimatedRoadmap />
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -962,7 +987,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           ========================================================================= */}
       <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
         <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
-          <div className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-8 sm:mb-12">
+          <Reveal className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
               <span className="w-2 h-2 rounded-full bg-secondary" />
               <span className="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase tracking-wider">
@@ -973,13 +998,13 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <h2 className="font-headline-lg text-headline-lg text-on-surface font-bold text-balance">
               Learn with Purpose. Grow with Confidence. Succeed with Skill.
             </h2>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Left Side: 6 feature cards + 1 span-2 installment card */}
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Feature 1 */}
-              <div className="p-5 bg-surface-container-low rounded-xl border border-[#E5E7EB] flex flex-col gap-2">
+              <Reveal delay={0} className="p-5 bg-surface-container-low rounded-xl border border-[#E5E7EB] flex flex-col gap-2">
                 <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-secondary shadow-sm">
                   <Monitor className="w-4 h-4" />
                 </div>
@@ -987,10 +1012,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <p className="font-body-sm text-body-sm text-on-surface-variant">
                   Classroom and key laboratory experience coupled with digital review material.
                 </p>
-              </div>
+              </Reveal>
 
               {/* Feature 2 */}
-              <div className="p-5 bg-surface-container-low rounded-xl border border-[#E5E7EB] flex flex-col gap-2">
+              <Reveal delay={0.1} className="p-5 bg-surface-container-low rounded-xl border border-[#E5E7EB] flex flex-col gap-2">
                 <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-secondary shadow-sm">
                   <FileSpreadsheet className="w-4 h-4" />
                 </div>
@@ -998,10 +1023,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <p className="font-body-sm text-body-sm text-on-surface-variant">
                   Practical ledger exercises derived from actual Tirunelveli traders and firms.
                 </p>
-              </div>
+              </Reveal>
 
               {/* Feature 3 */}
-              <div className="p-5 bg-surface-container-low rounded-xl border border-[#E5E7EB] flex flex-col gap-2">
+              <Reveal delay={0.2} className="p-5 bg-surface-container-low rounded-xl border border-[#E5E7EB] flex flex-col gap-2">
                 <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-secondary shadow-sm">
                   <GraduationCap className="w-4 h-4" />
                 </div>
@@ -1009,10 +1034,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <p className="font-body-sm text-body-sm text-on-surface-variant">
                   80% practice and 20% theory ensuring muscle memory for high typing speed.
                 </p>
-              </div>
+              </Reveal>
 
               {/* Feature 4 */}
-              <div className="p-5 bg-surface-container-low rounded-xl border border-[#E5E7EB] flex flex-col gap-2">
+              <Reveal delay={0.3} className="p-5 bg-surface-container-low rounded-xl border border-[#E5E7EB] flex flex-col gap-2">
                 <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-secondary shadow-sm">
                   <Award className="w-4 h-4" />
                 </div>
@@ -1020,10 +1045,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <p className="font-body-sm text-body-sm text-on-surface-variant">
                   Authorized training and direct testing certified by Tally Education Bangalore.
                 </p>
-              </div>
+              </Reveal>
 
               {/* Feature 5 */}
-              <div className="p-5 bg-surface-container-low rounded-xl border border-[#E5E7EB] flex flex-col gap-2">
+              <Reveal delay={0.4} className="p-5 bg-surface-container-low rounded-xl border border-[#E5E7EB] flex flex-col gap-2">
                 <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-secondary shadow-sm">
                   <ShieldCheck className="w-4 h-4" />
                 </div>
@@ -1031,10 +1056,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <p className="font-body-sm text-body-sm text-on-surface-variant">
                   Experience professionals, data preparation, & mock bill generation safely.
                 </p>
-              </div>
+              </Reveal>
 
               {/* Feature 6 */}
-              <div className="p-5 bg-surface-container-low rounded-xl border border-[#E5E7EB] flex flex-col gap-2">
+              <Reveal delay={0.5} className="p-5 bg-surface-container-low rounded-xl border border-[#E5E7EB] flex flex-col gap-2">
                 <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-secondary shadow-sm">
                   <Users className="w-4 h-4" />
                 </div>
@@ -1042,10 +1067,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <p className="font-body-sm text-body-sm text-on-surface-variant">
                   Dedicated mentoring preference with 10+ years in commercial accounting.
                 </p>
-              </div>
+              </Reveal>
 
               {/* Span 2 Card: Affordable Fees */}
-              <div className="sm:col-span-2 p-5 bg-surface-container-low rounded-xl border border-[#E5E7EB] flex items-start gap-4">
+              <Reveal delay={0.6} className="sm:col-span-2 p-5 bg-surface-container-low rounded-xl border border-[#E5E7EB] flex items-start gap-4">
                 <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-secondary shadow-sm shrink-0 mt-0.5">
                   <Building2 className="w-4 h-4" />
                 </div>
@@ -1055,11 +1080,11 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                     Empowering students with zero-interest suggested payment options for every family background.
                   </p>
                 </div>
-              </div>
+              </Reveal>
             </div>
 
             {/* Right Side: Animated Lab Illustration + Interactive Student Portal / Timetable */}
-            <div className="lg:col-span-5 flex flex-col gap-5">
+            <Reveal delay={0.2} className="lg:col-span-5 flex flex-col gap-5">
               {/* Animated Editorial Line-Art Drawing (Seamlessly blending onto white canvas) */}
               <div className="flex flex-col items-center justify-center">
                 <AnimatedLabLearning />
@@ -1167,7 +1192,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   </div>
                 )}
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -1177,7 +1202,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           ========================================================================= */}
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
         <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
-          <div className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-10">
+          <Reveal className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
               <span className="w-2 h-2 rounded-full bg-secondary" />
               <span className="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase tracking-wider">
@@ -1192,42 +1217,42 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl">
               From Tirunelveli micro-enterprises to Madurai corporate accounting teams, we prepare our learners for immediate corporate recruitment.
             </p>
-          </div>
+          </Reveal>
 
           {/* 4 Stats */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center pb-10 border-b border-[#E5E7EB]">
-            <div>
+            <Reveal delay={0}>
               <span className="font-display text-headline-lg lg:text-display font-extrabold text-on-surface">
                 92%
               </span>
               <p className="font-title-sm text-title-sm text-on-surface-variant font-medium mt-1">
                 Placement Rate
               </p>
-            </div>
-            <div>
+            </Reveal>
+            <Reveal delay={0.15}>
               <span className="font-display text-headline-lg lg:text-display font-extrabold text-on-surface">
                 150<span className="text-secondary">+</span>
               </span>
               <p className="font-title-sm text-title-sm text-on-surface-variant font-medium mt-1">
                 Hiring Partners
               </p>
-            </div>
-            <div>
+            </Reveal>
+            <Reveal delay={0.3}>
               <span className="font-display text-headline-lg lg:text-display font-extrabold text-on-surface">
                 14
               </span>
               <p className="font-title-sm text-title-sm text-on-surface-variant font-medium mt-1">
                 Days Avg. Wait
               </p>
-            </div>
-            <div>
+            </Reveal>
+            <Reveal delay={0.45}>
               <span className="font-display text-headline-lg lg:text-display font-extrabold text-secondary">
                 ₹3.2L
               </span>
               <p className="font-title-sm text-title-sm text-on-surface-variant font-medium mt-1">
                 Avg. Starting CTC
               </p>
-            </div>
+            </Reveal>
           </div>
 
           {/* Recruiting Employer Logos / Chips */}
@@ -1242,14 +1267,15 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 'TIRUNELVELI SPINNERS',
                 'MADURAI FREIGHT LOGISTICS',
                 'KANNAN & ASSOCIATES CA',
-              ].map((partner) => (
-                <div
+              ].map((partner, idx) => (
+                <Reveal
                   key={partner}
+                  delay={idx * 0.1}
                   className="px-4 py-2 rounded-xl bg-surface-container-low border border-[#E5E7EB] font-label-sm text-label-sm font-bold text-on-surface flex items-center gap-2"
                 >
                   <Building2 className="w-3.5 h-3.5 text-secondary" />
                   <span>{partner}</span>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -1263,7 +1289,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
         <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left: Info & Bullets */}
-            <div className="lg:col-span-7 flex flex-col gap-6">
+            <Reveal className="lg:col-span-7 flex flex-col gap-6">
               <div className="inline-flex items-center gap-2">
                 <span className="px-3 py-1 rounded-full bg-surface-container-low font-label-eyebrow text-label-eyebrow font-bold text-secondary uppercase tracking-wider border border-[#E5E7EB]">
                   TEPL AUTHORIZED PARTNER
@@ -1316,10 +1342,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
-            </div>
+            </Reveal>
 
             {/* Right: Authentic Certificate Card */}
-            <div className="lg:col-span-5 flex flex-col items-center">
+            <Reveal delay={0.2} className="lg:col-span-5 flex flex-col items-center">
               <div className="w-full max-w-md mx-auto">
                 {/* Certificate Container with subtle glow and premium frame */}
                 <div className="relative group">
@@ -1420,7 +1446,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   </button>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -1430,7 +1456,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           ========================================================================= */}
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
         <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
-          <div className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-12">
+          <Reveal className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
               <span className="w-2 h-2 rounded-full bg-secondary" />
               <span className="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase tracking-wider">
@@ -1445,11 +1471,11 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <p className="font-body-md text-body-md text-on-surface-variant">
               Designed for quiet focus, hands-on ledger entries, and collaborative problem-solving.
             </p>
-          </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Campus Photo 1: Hands-on Practical Lab */}
-            <div className="flex flex-col gap-2.5 group">
+            <Reveal delay={0} className="flex flex-col gap-2.5 group">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container border border-[#E5E7EB] relative">
                 <img
                   src="/campus/hero-bootcamp-speaker-session.jpg"
@@ -1463,10 +1489,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   Configured with latest Tally Prime & 1-on-1 mentor guidance
                 </p>
               </div>
-            </div>
+            </Reveal>
 
             {/* Campus Photo 2: Dedicated Lecture Hall */}
-            <div className="flex flex-col gap-2.5 group">
+            <Reveal delay={0.15} className="flex flex-col gap-2.5 group">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container border border-[#E5E7EB] relative">
                 <img
                   src="/campus/lecture-hall-session.jpg"
@@ -1480,10 +1506,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   Interactive audio-visual display for taxation theory & GST
                 </p>
               </div>
-            </div>
+            </Reveal>
 
             {/* Campus Photo 3: Interactive Seminar & Student Presentations */}
-            <div className="flex flex-col gap-2.5 group">
+            <Reveal delay={0.3} className="flex flex-col gap-2.5 group">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container border border-[#E5E7EB] relative">
                 <img
                   src="/campus/student-seminar-podium.jpg"
@@ -1497,10 +1523,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   Student presentations, career guidance & interview drills
                 </p>
               </div>
-            </div>
+            </Reveal>
 
             {/* Campus Photo 4: Official Certificate Convocation */}
-            <div className="flex flex-col gap-2.5 group">
+            <Reveal delay={0.45} className="flex flex-col gap-2.5 group">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-surface-container border border-[#E5E7EB] relative">
                 <img
                   src="/campus/certificate-distribution.jpg"
@@ -1514,7 +1540,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   Official TEPL certificate distribution & student honors
                 </p>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -1524,7 +1550,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           ========================================================================= */}
       <section id="testimonials" className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
         <div className="bg-surface-container-lowest rounded-lg p-6 sm:p-10 lg:p-14 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB] overflow-hidden">
-          <div className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-10">
+          <Reveal className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
               <span className="w-2 h-2 rounded-full bg-secondary" />
               <span className="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase tracking-wider">
@@ -1538,9 +1564,9 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <p className="text-sm sm:text-base text-neutral-600 max-w-xl">
               Hear from graduates placed in leading accounting, audit, and tax firms across Tamil Nadu.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="flex flex-col gap-5 w-full overflow-hidden">
+          <Reveal delay={0.15} className="flex flex-col gap-5 w-full overflow-hidden">
             {STUDENT_TESTIMONIALS_DATA.rows.map((row) => (
               <HorizontalScroller
                 key={row.id}
@@ -1557,7 +1583,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 ))}
               </HorizontalScroller>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -1566,7 +1592,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           ========================================================================= */}
       <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
         <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
-          <div className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-8 sm:mb-12">
+          <Reveal className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
               <span className="w-2 h-2 rounded-full bg-secondary" />
               <span className="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase tracking-wider">
@@ -1577,14 +1603,15 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <h2 className="font-headline-lg text-headline-lg text-on-surface font-bold">
               Frequently Asked Questions
             </h2>
-          </div>
+          </Reveal>
 
           <div className="max-w-3xl mx-auto space-y-3">
             {faqs.map((faq, idx) => {
               const isOpen = openFaqIndex === idx;
               return (
-                <div
+                <Reveal
                   key={idx}
+                  delay={idx * 0.1}
                   className="bg-surface-container-low rounded-2xl border border-[#E5E7EB] overflow-hidden transition-all"
                 >
                   <button
@@ -1604,13 +1631,13 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                       {faq.a}
                     </div>
                   )}
-                </div>
+                </Reveal>
               );
             })}
           </div>
 
           {/* WhatsApp Guidance Card */}
-          <div className="max-w-3xl mx-auto mt-8 p-4 sm:p-5 rounded-2xl bg-surface-container-low border border-[#E5E7EB] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <Reveal delay={0.2} className="max-w-3xl mx-auto mt-8 p-4 sm:p-5 rounded-2xl bg-surface-container-low border border-[#E5E7EB] flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3 text-center sm:text-left">
               <div className="w-10 h-10 rounded-full bg-emerald-100 text-secondary flex items-center justify-center shrink-0">
                 <MessageSquare className="w-5 h-5" />
@@ -1629,7 +1656,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               <MessageSquare className="w-4 h-4" />
               <span>Chat on WhatsApp</span>
             </a>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -1637,7 +1664,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           11. CLOSING HIGH CONTRAST BANNER
           ========================================================================= */}
       <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-12">
-        <div className="bg-primary text-on-primary rounded-2xl sm:rounded-3xl p-6 sm:p-12 lg:p-16 text-center flex flex-col items-center gap-6 shadow-[0_12px_32px_-4px_rgba(0,0,0,0.18)]">
+        <Reveal className="bg-primary text-on-primary rounded-2xl sm:rounded-3xl p-6 sm:p-12 lg:p-16 text-center flex flex-col items-center gap-6 shadow-[0_12px_32px_-4px_rgba(0,0,0,0.18)]">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-sm max-w-full">
             <span className="w-2 h-2 rounded-full bg-secondary-fixed shrink-0" />
             <span className="font-label-eyebrow text-[10px] sm:text-xs text-surface-bright uppercase tracking-wider truncate">
@@ -1685,7 +1712,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               <span>Mon - Sat: 10:00 AM - 7:00 PM</span>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* High-Resolution Certificate Lightbox Modal */}

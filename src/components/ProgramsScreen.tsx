@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { WhatsAppIcon } from './ui/WhatsAppIcon';
 import { openEnrollWhatsApp } from '../lib/contact';
+import { Reveal } from './Reveal';
 
 interface ProgramsScreenProps {
   onNavigate?: (path: string) => void;
@@ -227,12 +228,13 @@ export const ProgramsScreen: React.FC<ProgramsScreenProps> = ({
       {/* 2. THE 12 COURSES GRID */}
       <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-12 sm:mb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
-          {PROGRAMS_DATA.map((prog) => {
+          {PROGRAMS_DATA.map((prog, idx) => {
             const theme = COURSE_THEMES[prog.id] || DEFAULT_THEME;
 
             return (
-              <div
+              <Reveal
                 key={prog.id}
+                delay={(idx % 6) * 0.15}
                 className={`flex flex-col rounded-3xl border ${theme.borderColor} overflow-hidden bg-white shadow-[0_4px_20px_-2px_rgba(17,24,39,0.05)] hover:shadow-[0_20px_40px_-4px_rgba(17,24,39,0.12)] transition-all duration-300 hover:-translate-y-1.5 group`}
               >
                 {/* Top Tinted Pastel Header */}
@@ -292,7 +294,7 @@ export const ProgramsScreen: React.FC<ProgramsScreenProps> = ({
                     </div>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             );
           })}
         </div>
@@ -303,7 +305,7 @@ export const ProgramsScreen: React.FC<ProgramsScreenProps> = ({
         <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-16 border border-neutral-200/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.04)]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Content Column */}
-            <div className="lg:col-span-7 flex flex-col gap-4 text-left">
+            <Reveal className="lg:col-span-7 flex flex-col gap-4 text-left">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-neutral-900 tracking-tight">
                 The Practice-Verify-Master Methodology
               </h2>
@@ -320,10 +322,10 @@ export const ProgramsScreen: React.FC<ProgramsScreenProps> = ({
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
-            </div>
+            </Reveal>
 
             {/* Right Metric Box */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <Reveal delay={0.2} className="lg:col-span-5 flex justify-center lg:justify-end">
               <div className="bg-neutral-100 rounded-3xl p-8 sm:p-10 flex flex-col items-center justify-center border border-neutral-200/80 aspect-square sm:w-72 sm:h-72 w-full text-center shadow-inner">
                 <Monitor className="w-10 h-10 text-neutral-400 mb-2 stroke-[1.5]" />
                 <span className="text-3xl sm:text-4xl font-black text-neutral-900 tracking-tight">
@@ -333,7 +335,7 @@ export const ProgramsScreen: React.FC<ProgramsScreenProps> = ({
                   Dual-Screen Enterprise Accounting
                 </span>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -341,7 +343,7 @@ export const ProgramsScreen: React.FC<ProgramsScreenProps> = ({
       {/* 4. PROGRAM FAQS (Interactive Accordion from reference image) */}
       <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-14 sm:mb-20">
         <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-16 border border-neutral-200/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.04)]">
-          <div className="text-center max-w-2xl mx-auto mb-10">
+          <Reveal className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-[11px] font-bold text-neutral-400 uppercase tracking-widest block mb-2">
               FREQUENTLY ASKED QUESTIONS
             </span>
@@ -351,14 +353,15 @@ export const ProgramsScreen: React.FC<ProgramsScreenProps> = ({
             <p className="text-neutral-500 text-xs sm:text-sm mt-2">
               Get clear answers on curriculum, prerequisites, certifications, and career support.
             </p>
-          </div>
+          </Reveal>
 
           <div className="max-w-3xl mx-auto flex flex-col gap-3">
             {faqs.map((faq, idx) => {
               const isOpen = openFaq === idx;
               return (
-                <div
+                <Reveal
                   key={idx}
+                  delay={idx * 0.1}
                   className="rounded-2xl border border-neutral-200/90 bg-neutral-50/50 overflow-hidden transition-colors"
                 >
                   <button
@@ -376,7 +379,7 @@ export const ProgramsScreen: React.FC<ProgramsScreenProps> = ({
                       {faq.a}
                     </div>
                   )}
-                </div>
+                </Reveal>
               );
             })}
           </div>
@@ -390,7 +393,7 @@ export const ProgramsScreen: React.FC<ProgramsScreenProps> = ({
           <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-white/10 blur-2xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-black/5 blur-2xl pointer-events-none" />
 
-          <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center gap-4">
+          <Reveal className="relative z-10 max-w-2xl mx-auto flex flex-col items-center gap-4">
             <h2 className="text-2xl sm:text-4xl font-black text-neutral-900 tracking-tight">
               Ready to Start Your Journey?
             </h2>
@@ -436,7 +439,7 @@ export const ProgramsScreen: React.FC<ProgramsScreenProps> = ({
                 Authorized TEPL Partner
               </span>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
