@@ -62,8 +62,8 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
   return (
     <div className="flex flex-col w-full">
       {/* 1. HERO HEADER */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
-        <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB] text-center">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
+        <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-14 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB] text-center">
           <div className="max-w-3xl mx-auto flex flex-col items-center gap-4">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low border border-[#E5E7EB]">
               <span className="w-2 h-2 rounded-full bg-secondary" />
@@ -72,40 +72,40 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
               </span>
             </div>
 
-            <h1 className="font-headline-lg lg:text-headline-xl text-on-surface font-black tracking-tight">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-on-surface tracking-tight">
               Our Certification Programs
             </h1>
 
-            <p className="font-body-md sm:font-body-lg text-body-md sm:text-body-lg text-on-surface-variant leading-relaxed">
+            <p className="text-xs sm:text-base text-on-surface-variant leading-relaxed">
               Earn industry-recognized credentials verified through cryptographically secured QR codes and official TEPL candidate directories. Designed for tangible career advancement across commercial accounting, taxation, and financial auditing.
             </p>
 
             {/* Trust highlights */}
-            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-3 text-xs text-neutral-600 font-medium">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 pt-2 text-xs text-neutral-600 font-medium">
               <span className="inline-flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                Cryptographically Verifiable QR Codes
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Cryptographically Verifiable QR</span>
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                Official TEPL Partner Credentials
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Official TEPL Partner Credentials</span>
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                Industry-Standard Curriculum
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Industry-Standard Curriculum</span>
               </span>
             </div>
 
             {/* Search and Category Filters */}
-            <div className="w-full max-w-2xl mt-4 pt-4 border-t border-neutral-100 flex flex-col gap-3">
+            <div className="w-full max-w-2xl mt-3 pt-3 border-t border-neutral-100 flex flex-col gap-3">
               <div className="relative w-full">
                 <Search className="w-4 h-4 text-neutral-400 absolute left-4 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
-                  placeholder="Search by course title or certificate ID (e.g. LK-1024, GST, Tally)..."
+                  placeholder="Search by course title or certificate ID (e.g. LK-1024, GST)..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-11 pr-4 py-2.5 rounded-full bg-surface-container-low border border-[#E5E7EB] text-sm focus:outline-none focus:ring-2 focus:ring-black"
+                  className="w-full pl-11 pr-4 py-2.5 rounded-full bg-surface-container-low border border-[#E5E7EB] text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-black"
                 />
               </div>
 
@@ -115,7 +115,7 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
                   <button
                     key={cat}
                     onClick={() => setSelectedCategory(cat)}
-                    className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
+                    className={`px-3 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                       selectedCategory === cat
                         ? 'bg-black text-white shadow-sm'
                         : 'bg-surface-container-low text-neutral-600 hover:bg-neutral-200 border border-[#E5E7EB]'
@@ -131,8 +131,8 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
       </section>
 
       {/* 2. THE CERTIFICATES GRID */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-12 sm:mb-16">
-        <div className="flex items-center justify-between mb-6 px-1">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-12 sm:mb-16">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-6 px-1">
           <div>
             <h2 className="text-xl sm:text-2xl font-bold text-on-surface">
               Featured Course Certificates
@@ -143,9 +143,9 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
           </div>
           <button
             onClick={() => onOpenVerify('LK-1024')}
-            className="inline-flex items-center gap-2 font-label-md text-label-md text-on-surface bg-surface-container-lowest hover:bg-surface-container transition-all py-2 px-4 rounded-full border border-[#E5E7EB] shadow-sm font-semibold text-xs sm:text-sm"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-on-surface bg-surface-container-lowest hover:bg-surface-container transition-all py-2.5 px-4 rounded-full border border-[#E5E7EB] shadow-sm font-semibold text-xs sm:text-sm cursor-pointer"
           >
-            <ShieldCheck className="w-4 h-4 text-secondary" />
+            <ShieldCheck className="w-4 h-4 text-secondary shrink-0" />
             <span>Verify Any Credential</span>
           </button>
         </div>

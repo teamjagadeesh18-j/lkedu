@@ -38,8 +38,8 @@ export const ContactScreen: React.FC = () => {
   return (
     <div className="flex flex-col w-full">
       {/* Header Banner with Career Journey Illustration */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
-        <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-14 shadow-[0_4px_24px_-2px_rgba(17,24,39,0.06)] border border-[#E5E7EB] overflow-hidden">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
+        <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-14 shadow-[0_4px_24px_-2px_rgba(17,24,39,0.06)] border border-[#E5E7EB] overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Content Column */}
             <div className="lg:col-span-7 flex flex-col gap-4 text-left">
@@ -50,16 +50,16 @@ export const ContactScreen: React.FC = () => {
                 </span>
               </div>
 
-              <h1 className="font-display text-headline-lg lg:text-display text-on-surface tracking-tight">
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-neutral-900 tracking-tight leading-tight">
                 Connect with Tirunelveli Campus
               </h1>
 
-              <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+              <p className="text-xs sm:text-base lg:text-lg text-neutral-600 leading-relaxed">
                 Drop by our dual-monitor laboratory on S. N. High Road for a free live demo session or talk directly with our career counselors.
               </p>
 
               {/* Journey Narrative Callout */}
-              <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200/80 flex items-start gap-3 mt-1">
+              <div className="p-3.5 sm:p-4 rounded-2xl bg-neutral-50 border border-neutral-200/80 flex items-start gap-3 mt-1">
                 <Sparkles className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
                 <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed">
                   <strong className="text-neutral-900 font-bold">From Institute to Dream Job:</strong> Start with an idea, gain hands-on practical skills in our training institute, earn authorized certification, and step directly onto the roadway to your corporate career.
@@ -67,11 +67,11 @@ export const ContactScreen: React.FC = () => {
               </div>
 
               {/* Quick Contact Action Pills */}
-              <div className="flex flex-wrap items-center gap-3 pt-2">
+              <div className="flex flex-col sm:flex-row w-full sm:w-auto items-stretch sm:items-center gap-3 pt-2">
                 <a
                   href={`tel:${CONTACT_INFO.primaryTel}`}
                   onClick={() => triggerPhoneCall(CONTACT_INFO.primaryTel)}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black hover:bg-neutral-800 text-white font-semibold text-xs sm:text-sm transition-all shadow-sm"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-black hover:bg-neutral-800 text-white font-semibold text-xs sm:text-sm transition-all shadow-sm"
                 >
                   <Phone className="w-3.5 h-3.5" />
                   <span>Call Us ({CONTACT_INFO.primaryPhone})</span>
@@ -80,7 +80,7 @@ export const ContactScreen: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => openGeneralWhatsApp('Hi LK Educations, I want to inquire about admissions and batch schedules.')}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] active:bg-[#1da850] text-white font-semibold text-xs sm:text-sm transition-all shadow-sm"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] active:bg-[#1da850] text-white font-semibold text-xs sm:text-sm transition-all shadow-sm cursor-pointer"
                 >
                   <WhatsAppIcon className="w-4 h-4" />
                   <span>Chat on WhatsApp</span>
@@ -97,11 +97,11 @@ export const ContactScreen: React.FC = () => {
       </section>
 
       {/* Campus Info & Form Grid */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-12">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Left Column: Campus Info Cards */}
           <div className="lg:col-span-5 flex flex-col gap-6">
-            <div className="bg-surface-container-lowest rounded-2xl p-8 shadow-sm border border-[#E5E7EB] flex flex-col gap-6">
+            <div className="bg-surface-container-lowest rounded-2xl p-5 sm:p-8 shadow-sm border border-[#E5E7EB] flex flex-col gap-6">
               <h3 className="font-title-lg text-title-lg font-bold text-on-surface">
                 Campus Location
               </h3>

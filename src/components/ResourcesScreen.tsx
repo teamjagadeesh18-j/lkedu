@@ -51,8 +51,8 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
       {/* =========================================================================
           1. HERO SECTION (Our Style: Pill Eyebrow, Black Badge Headline, Grand Scale)
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
-        <div className="bg-white rounded-3xl p-8 sm:p-14 lg:p-18 border border-neutral-200/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.04)] text-center relative overflow-hidden">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-16 border border-neutral-200/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.04)] text-center relative overflow-hidden">
           {/* Subtle Ledger Grid Texture */}
           <div
             className="absolute inset-0 opacity-[0.025] pointer-events-none"
@@ -63,43 +63,43 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
             }}
           />
 
-          <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-6">
+          <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-5 sm:gap-6">
             {/* Eyebrow Pill */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/80 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-              <span className="font-label-eyebrow text-[11px] sm:text-xs font-bold text-neutral-500 uppercase tracking-widest">
-                TALLYCALCULUS & VOCATIONAL ASSESSMENT PLATFORM
+            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/80 shadow-xs max-w-full">
+              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse shrink-0" />
+              <span className="font-label-eyebrow text-[10px] sm:text-xs font-bold text-neutral-500 uppercase tracking-widest truncate">
+                TALLYCALCULUS ASSESSMENT PLATFORM
               </span>
             </div>
 
             {/* Grand Headline with Badge & Accent */}
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[68px] font-black text-neutral-900 tracking-[-0.03em] leading-[1.12] sm:leading-[1.08] text-balance">
               Comprehensive Solutions for <br />
-              <span className="inline-block bg-neutral-950 text-white px-4 sm:px-6 py-0.5 sm:py-1 rounded-2xl sm:rounded-3xl align-middle mx-1 font-black shadow-sm tracking-tight">
+              <span className="inline-block bg-neutral-950 text-white px-3 sm:px-6 py-0.5 sm:py-1 rounded-xl sm:rounded-3xl align-middle mx-1 font-black shadow-sm tracking-tight text-2xl sm:text-5xl md:text-6xl lg:text-[68px]">
                 Assessing
               </span>{' '}
               <span className="text-secondary font-black">& Hiring</span> the Right Talent
             </h1>
 
             {/* Subtext from reference image adapted to LK Educations */}
-            <p className="text-sm sm:text-base md:text-lg text-neutral-600 font-normal leading-relaxed max-w-2xl text-balance">
+            <p className="text-xs sm:text-base md:text-lg text-neutral-600 font-normal leading-relaxed max-w-2xl text-balance">
               <strong className="text-neutral-900 font-semibold">TallyCalculus</strong> is an all-encompassing online assessment platform tailored for corporates, training organizations, educational institutions, universities, colleges, and audit firms. Leveraging cutting-edge technology and best practices, TallyCalculus delivers a seamless, robust experience, enabling organizations to identify, evaluate, and nurture top accounting talent, driving career growth and organizational success.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 w-full sm:w-auto">
               <button
                 type="button"
                 onClick={() => onOpenCounselor('TallyCalculus Assessment Platform')}
-                className="bg-black text-white hover:bg-neutral-800 transition-all px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-md inline-flex items-center gap-2"
+                className="w-full sm:w-auto bg-black text-white hover:bg-neutral-800 transition-all px-6 sm:px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold shadow-md inline-flex items-center justify-center gap-2"
               >
                 <span>Get Started with Assessments</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
 
               <a
                 href="#platform-features"
-                className="bg-neutral-100 hover:bg-neutral-200/80 text-neutral-800 transition-all px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold border border-neutral-200"
+                className="w-full sm:w-auto bg-neutral-100 hover:bg-neutral-200/80 text-neutral-800 transition-all px-6 sm:px-7 py-3.5 rounded-full text-xs sm:text-sm font-semibold border border-neutral-200 text-center"
               >
                 Explore Platform Features ↓
               </a>
@@ -700,8 +700,8 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
       {/* =========================================================================
           5. READY TO START YOUR JOURNEY? (Golden Banner CTA matching website theme)
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8">
-        <div className="bg-gradient-to-r from-[#e7b85e] via-[#e5ab48] to-[#e8be66] text-neutral-900 rounded-3xl p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden shadow-md">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8">
+        <div className="bg-gradient-to-r from-[#e7b85e] via-[#e5ab48] to-[#e8be66] text-neutral-900 rounded-2xl sm:rounded-3xl p-6 sm:p-12 lg:p-16 text-center relative overflow-hidden shadow-md">
           {/* Subtle concentric circular overlay */}
           <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-white/10 blur-2xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-black/5 blur-2xl pointer-events-none" />
@@ -716,21 +716,21 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 w-full sm:w-auto">
               <button
                 type="button"
                 onClick={() => onOpenCounselor('TallyCalculus Platform Demo')}
-                className="bg-black text-white hover:bg-neutral-800 transition-all px-7 py-3 rounded-full text-xs sm:text-sm font-semibold shadow-md inline-flex items-center gap-2"
+                className="w-full sm:w-auto bg-black text-white hover:bg-neutral-800 transition-all px-6 sm:px-7 py-3 rounded-full text-xs sm:text-sm font-semibold shadow-md inline-flex items-center justify-center gap-2"
               >
                 <span>Book a Live Platform Demonstration</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
 
               {onNavigate && (
                 <button
                   type="button"
                   onClick={() => onNavigate('programs')}
-                  className="bg-white text-neutral-900 hover:bg-neutral-100 transition-all px-6 py-3 rounded-full text-xs sm:text-sm font-semibold border border-black/10 shadow-sm"
+                  className="w-full sm:w-auto bg-white text-neutral-900 hover:bg-neutral-100 transition-all px-6 py-3 rounded-full text-xs sm:text-sm font-semibold border border-black/10 shadow-sm"
                 >
                   <span>Explore Courses</span>
                 </button>

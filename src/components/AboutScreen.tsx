@@ -45,8 +45,8 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
   return (
     <div className="flex flex-col w-full">
       {/* 1. Hero Section */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
-        <div className="relative overflow-hidden bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
+        <div className="relative overflow-hidden bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
           {/* Ledger Grid Ambient Texture */}
           <div
             className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -57,7 +57,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
             }}
           />
 
-          <div className="relative z-10 max-w-4xl flex flex-col items-start gap-6">
+          <div className="relative z-10 max-w-4xl flex flex-col items-start gap-5 sm:gap-6">
             {/* Eyebrow Pill */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low border border-[#E5E7EB]">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
@@ -67,26 +67,26 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
             </div>
 
             {/* Headline */}
-            <h1 className="font-display text-headline-lg lg:text-display text-on-surface tracking-tight">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-neutral-900 tracking-tight leading-tight">
               Why LK Education Exists, and Who We Built It For
             </h1>
 
             {/* Short Intro */}
-            <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-3xl">
+            <p className="text-sm sm:text-base lg:text-lg text-neutral-600 leading-relaxed max-w-3xl">
               Founded in Tirunelveli with a singular mission: to close the gap between textbook college commerce degrees and the real, fast-paced accounting demands of modern businesses. We transform learners into confident, job-ready accounting professionals through hands-on practice, authorized TEPL curriculum, and lifelong career support.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row w-full sm:w-auto items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
               <button
                 onClick={() => onNavigate('programs')}
-                className="inline-flex items-center justify-center font-label-md text-label-md text-on-primary bg-primary hover:bg-neutral-800 active:bg-primary px-8 py-3.5 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-all hover:scale-[1.01]"
+                className="w-full sm:w-auto inline-flex items-center justify-center font-label-md text-label-md text-on-primary bg-primary hover:bg-neutral-800 active:bg-primary px-8 py-3.5 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-all cursor-pointer font-bold"
               >
                 Explore Programs
               </button>
               <button
                 onClick={() => onNavigate('contact-us')}
-                className="inline-flex items-center justify-center font-label-md text-label-md text-on-surface bg-surface-container-low hover:bg-surface-container transition-all px-8 py-3.5 rounded-full border border-[#E5E7EB]"
+                className="w-full sm:w-auto inline-flex items-center justify-center font-label-md text-label-md text-on-surface bg-surface-container-low hover:bg-surface-container transition-all px-8 py-3.5 rounded-full border border-[#E5E7EB] cursor-pointer"
               >
                 Contact Us
               </button>
@@ -96,9 +96,9 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
       </section>
 
       {/* 2. Four Stat Counters Card */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
-        <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-10 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
+        <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {/* Stat 1: 10+ Years of Dedication */}
             <div className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors">
               <div className="flex items-baseline gap-1">

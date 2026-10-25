@@ -596,28 +596,28 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
   return (
     <div className="flex flex-col w-full pb-16 animate-in fade-in duration-200">
       {/* 1. Hero Section (Matching Image 1) */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
-        <div className="bg-white rounded-3xl p-8 sm:p-14 lg:p-18 border border-neutral-200/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.04)] text-center relative overflow-hidden">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-16 border border-neutral-200/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.04)] text-center relative overflow-hidden">
           <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-4 sm:gap-6">
             {/* Eyebrow Pill */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/80 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-              <span className="font-label-eyebrow text-[11px] sm:text-xs font-bold text-neutral-500 uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/80 shadow-xs max-w-full">
+              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse shrink-0" />
+              <span className="font-label-eyebrow text-[10px] sm:text-xs font-bold text-neutral-500 uppercase tracking-wider truncate">
                 INDUSTRY READINESS INSIGHTS
               </span>
             </div>
 
             {/* Headline with Black Badge & Colored Accent */}
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-black text-neutral-900 tracking-[-0.03em] leading-[1.12] sm:leading-[1.08] text-balance">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-neutral-900 tracking-[-0.03em] leading-[1.15] sm:leading-[1.08] text-balance">
               Insights for{' '}
-              <span className="inline-block bg-neutral-950 text-white px-3.5 sm:px-6 py-0.5 sm:py-1 rounded-2xl sm:rounded-3xl align-middle mx-1 font-black shadow-sm tracking-tight">
+              <span className="inline-block bg-neutral-950 text-white px-3 sm:px-5 py-0.5 sm:py-1 rounded-xl sm:rounded-2xl align-middle mx-1 font-black shadow-sm tracking-tight text-2xl sm:text-4xl md:text-5xl">
                 Industry
               </span>{' '}
               <span className="text-secondary font-black">Readiness</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-sm sm:text-base md:text-lg text-neutral-600 font-normal leading-relaxed max-w-2xl text-balance">
+            <p className="text-xs sm:text-base md:text-lg text-neutral-600 font-normal leading-relaxed max-w-2xl text-balance">
               Discover career roadmaps, real-world accounting guides, GST return checklists, and corporate hiring expectations for students and fresh graduates.
             </p>
 
@@ -627,21 +627,21 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
                 <Search className="w-4 h-4 text-neutral-400 absolute left-4 top-3.5" />
                 <input
                   type="text"
-                  placeholder="Search articles on GSTR-2B, shortcuts, TDS, interviews, placement..."
+                  placeholder="Search articles on GSTR-2B, shortcuts, TDS, interviews..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-11 pr-4 py-3 rounded-full bg-neutral-50 border border-neutral-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-black text-neutral-900 placeholder:text-neutral-400"
+                  className="w-full pl-11 pr-4 py-2.5 sm:py-3 rounded-full bg-neutral-50 border border-neutral-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-black text-neutral-900 placeholder:text-neutral-400"
                 />
               </div>
 
               {/* Category Pills */}
-              <div className="flex items-center justify-center gap-2 overflow-x-auto pb-1 pt-1 flex-wrap">
+              <div className="flex items-center justify-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 pt-1 flex-wrap">
                 {categories.map((cat) => (
                   <button
                     key={cat}
                     type="button"
                     onClick={() => setSelectedCategory(cat)}
-                    className={`px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
+                    className={`px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
                       selectedCategory === cat
                         ? 'bg-black text-white shadow-xs'
                         : 'bg-neutral-100/80 text-neutral-600 hover:text-black hover:bg-neutral-200/70 border border-neutral-200/80'
@@ -656,8 +656,8 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
         </div>
       </section>
 
-      {/* 2. Blog Cards Grid (18 Cards in 6 Rows x 3 Columns, Matching Image 1) */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-16">
+      {/* 2. Blog Cards Grid */}
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-16">
         <div className="flex items-center justify-between mb-6">
           <span className="text-xs font-bold text-neutral-400 uppercase tracking-widest">
             Showing {filteredPosts.length} Articles

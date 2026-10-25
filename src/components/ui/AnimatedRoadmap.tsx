@@ -374,24 +374,24 @@ export const AnimatedRoadmap: React.FC<AnimatedRoadmapProps> = ({ className = ''
       </div>
 
       {/* 4. Bottom Milestone Strip (Seamless caption under the visual) */}
-      <div className="mt-3 flex items-center justify-center gap-2 sm:gap-4 text-[10px] sm:text-xs font-semibold text-neutral-600">
+      <div className="mt-3 flex flex-wrap items-center justify-center gap-1.5 sm:gap-4 text-[10px] sm:text-xs font-semibold text-neutral-600 px-2 text-center">
         <span className="flex items-center gap-1">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
           <span>1. Curious Learner</span>
         </span>
         <span className="text-neutral-400">➔</span>
         <span className="flex items-center gap-1">
-          <span className="w-2 h-2 rounded-full bg-emerald-600" />
+          <span className="w-2 h-2 rounded-full bg-emerald-600 shrink-0" />
           <span>2. Training Institute</span>
         </span>
         <span className="text-neutral-400">➔</span>
         <span className="flex items-center gap-1">
-          <span className="w-2 h-2 rounded-full bg-purple-600" />
+          <span className="w-2 h-2 rounded-full bg-purple-600 shrink-0" />
           <span>3. TEPL Certificate</span>
         </span>
         <span className="text-neutral-400">➔</span>
         <span className="flex items-center gap-1">
-          <span className="w-2 h-2 rounded-full bg-amber-500 animate-bounce" />
+          <span className="w-2 h-2 rounded-full bg-amber-500 animate-bounce shrink-0" />
           <span className="font-bold text-neutral-900">4. Dream Job!</span>
         </span>
       </div>

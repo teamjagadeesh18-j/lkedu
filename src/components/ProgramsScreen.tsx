@@ -197,36 +197,36 @@ export const ProgramsScreen: React.FC<ProgramsScreenProps> = ({
   return (
     <div className="flex flex-col w-full pb-16">
       {/* 1. HERO BANNER (Your Fast-Track to the Tech/Accounting Industry) */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-10 sm:mb-14">
-        <div className="bg-white rounded-3xl p-8 sm:p-14 border border-neutral-200/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.04)] text-center relative overflow-hidden">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 sm:mb-12">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-14 border border-neutral-200/90 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.04)] text-center relative overflow-hidden">
           {/* Subtle background glow */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
           {/* Eyebrow Pill */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-600 text-xs font-semibold uppercase tracking-wider mb-5">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neutral-100 border border-neutral-200 text-neutral-600 text-xs font-semibold uppercase tracking-wider mb-4 sm:mb-5">
             <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
             <span>VOCATIONAL ACCOUNTING CATALOG</span>
           </div>
 
           {/* Main Headline with black badge matching reference */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-neutral-900 tracking-tight leading-tight max-w-4xl mx-auto">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-neutral-900 tracking-tight leading-tight max-w-4xl mx-auto">
             Your Fast-Track to the{' '}
-            <span className="bg-black text-white px-3 sm:px-4 py-0.5 sm:py-1 rounded-2xl inline-block mx-1 shadow-sm">
+            <span className="bg-black text-white px-2.5 sm:px-4 py-0.5 sm:py-1 rounded-xl sm:rounded-2xl inline-block mx-1 shadow-sm text-xl sm:text-3xl lg:text-4xl">
               Accounting & Tally
             </span>{' '}
             Industry
           </h1>
 
           {/* Subtitle */}
-          <p className="text-neutral-500 text-sm sm:text-base max-w-2xl mx-auto mt-4 sm:mt-5 leading-relaxed">
+          <p className="text-neutral-500 text-xs sm:text-base max-w-2xl mx-auto mt-3 sm:mt-5 leading-relaxed">
             Hands-on vocational curriculum built around dual-monitor live enterprise labs, official TEPL certifications, and practical ledger mastery.
           </p>
         </div>
       </section>
 
-      {/* 2. THE 12 COURSES GRID (Matching the exact pastel card styling from reference image) */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-14 sm:mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+      {/* 2. THE 12 COURSES GRID */}
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
           {PROGRAMS_DATA.map((prog) => {
             const theme = COURSE_THEMES[prog.id] || DEFAULT_THEME;
 
@@ -260,21 +260,21 @@ export const ProgramsScreen: React.FC<ProgramsScreenProps> = ({
                   </p>
 
                   {/* Card Bottom Bar */}
-                  <div className="pt-4 border-t border-neutral-100 flex items-center justify-between text-xs">
-                    <div>
+                  <div className="pt-4 border-t border-neutral-100 flex flex-wrap items-center justify-between gap-2.5 text-xs">
+                    <div className="min-w-0">
                       <span className="text-[10px] uppercase tracking-wider text-neutral-400 font-bold block">
                         Delivery Mode
                       </span>
-                      <span className="font-bold text-neutral-800 text-xs sm:text-sm">
+                      <span className="font-bold text-neutral-800 text-xs sm:text-sm truncate block">
                         {prog.mode}
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 shrink-0">
                       <button
                         type="button"
                         onClick={() => setSelectedProgram(prog)}
-                        className="font-bold text-xs hover:underline inline-flex items-center gap-1 transition-all py-1.5 px-2.5 rounded-lg hover:bg-neutral-50"
+                        className="font-bold text-xs hover:underline inline-flex items-center gap-1 transition-all py-1.5 px-2.5 rounded-lg hover:bg-neutral-50 cursor-pointer"
                         style={{ color: theme.accent }}
                       >
                         <span>Details</span>
@@ -284,7 +284,7 @@ export const ProgramsScreen: React.FC<ProgramsScreenProps> = ({
                       <button
                         type="button"
                         onClick={() => openEnrollWhatsApp(prog.title)}
-                        className="bg-black hover:bg-neutral-800 text-white transition-all px-3.5 py-1.5 rounded-full text-xs font-bold inline-flex items-center gap-1.5 shadow-xs"
+                        className="bg-black hover:bg-neutral-800 text-white transition-all px-3.5 py-1.5 rounded-full text-xs font-bold inline-flex items-center gap-1.5 shadow-xs cursor-pointer"
                       >
                         <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400" />
                         <span>Enroll Now</span>
@@ -443,11 +443,11 @@ export const ProgramsScreen: React.FC<ProgramsScreenProps> = ({
       {/* 6. COURSE DETAILS MODAL (When clicking "Know more" on any card) */}
       {selectedProgram && (
         <div
-          className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto animate-in fade-in duration-200"
           onClick={() => setSelectedProgram(null)}
         >
           <div
-            className="relative bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-neutral-200 my-auto text-left"
+            className="relative bg-white rounded-2xl sm:rounded-3xl max-w-2xl w-full p-5 sm:p-8 shadow-2xl border border-neutral-200 my-auto text-left max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}

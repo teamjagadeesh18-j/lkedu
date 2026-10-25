@@ -198,13 +198,13 @@ export const CertificateCard: React.FC<CertificateCardProps> = ({
       </div>
 
       {/* Bottom Action Strip */}
-      <div className="mt-4 pt-3 border-t border-neutral-100 flex items-center justify-between gap-2">
+      <div className="mt-4 pt-3 border-t border-neutral-100 flex flex-wrap items-center justify-between gap-2">
         <button
           type="button"
           onClick={() => onVerify(certificate.id)}
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-neutral-700 hover:text-black py-1.5 px-3 rounded-lg hover:bg-neutral-100 transition-colors"
+          className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-neutral-700 hover:text-black py-1.5 px-2.5 sm:px-3 rounded-lg hover:bg-neutral-100 transition-colors cursor-pointer"
         >
-          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
           <span>Verify Credential</span>
         </button>
 
@@ -212,9 +212,9 @@ export const CertificateCard: React.FC<CertificateCardProps> = ({
           <button
             type="button"
             onClick={() => onEnroll(certificate.title)}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-black hover:bg-neutral-800 py-1.5 px-3.5 rounded-full transition-all shadow-sm"
+            className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-white bg-black hover:bg-neutral-800 py-1.5 px-3 sm:px-3.5 rounded-full transition-all shadow-sm cursor-pointer"
           >
-            <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400" />
+            <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
             <span>Enroll Now</span>
           </button>
         )}

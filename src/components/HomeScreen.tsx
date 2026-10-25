@@ -480,8 +480,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           1. HERO SECTION
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
-        <div className="relative overflow-hidden bg-surface-container-lowest rounded-3xl p-8 sm:p-14 lg:p-20 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.04)] border border-[#E5E7EB]">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
+        <div className="relative overflow-hidden bg-surface-container-lowest rounded-3xl p-5 sm:p-10 lg:p-16 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.04)] border border-[#E5E7EB]">
           {/* Ledger Grid Ambient Texture */}
           <div
             className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -492,19 +492,19 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             }}
           />
 
-          <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center gap-6 sm:gap-8">
+          <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center gap-5 sm:gap-8">
             {/* Eyebrow Pill */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/80 shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-              <span className="font-label-eyebrow text-[11px] sm:text-xs font-bold text-neutral-500 uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/80 shadow-xs max-w-full">
+              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse shrink-0" />
+              <span className="font-label-eyebrow text-[10px] sm:text-xs font-bold text-neutral-500 uppercase tracking-wider truncate">
                 INDUSTRY READINESS SYSTEM • TIRUNELVELI
               </span>
             </div>
 
             {/* Headline matching reference size, badge styling and black/green coloring */}
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] font-black text-neutral-900 tracking-[-0.03em] leading-[1.12] sm:leading-[1.08] text-balance max-w-5xl">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-neutral-900 tracking-[-0.03em] leading-[1.15] sm:leading-[1.08] text-balance max-w-5xl">
               Become{' '}
-              <span className="inline-block bg-neutral-950 text-white px-3.5 sm:px-6 py-0.5 sm:py-1 rounded-2xl sm:rounded-3xl align-middle mx-1 sm:mx-2 font-black shadow-sm tracking-tight">
+              <span className="inline-block bg-neutral-950 text-white px-3 sm:px-5 py-0.5 sm:py-1 rounded-xl sm:rounded-2xl align-middle mx-1 font-black shadow-sm tracking-tight text-2xl sm:text-4xl md:text-5xl lg:text-6xl">
                 Job-Ready
               </span>{' '}
               in <br className="hidden sm:inline" />
@@ -512,30 +512,30 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             </h1>
 
             {/* Subtitle matching reference size, weight and rhythm */}
-            <p className="text-base sm:text-lg md:text-xl text-neutral-600 font-normal leading-relaxed max-w-2xl text-balance">
+            <p className="text-sm sm:text-lg md:text-xl text-neutral-600 font-normal leading-relaxed max-w-2xl text-balance">
               Build a strong career in accounting through industry-recognised courses powered by{' '}
               <span className="text-secondary font-bold">Tally Education Pvt. Ltd. (TEPL)</span>.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+            {/* CTA Buttons - Full width on small mobile, row on tablet & desktop */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-1 w-full sm:w-auto">
               <button
                 onClick={() => onNavigate('programs')}
-                className="inline-flex items-center gap-2 font-label-md text-label-md text-on-primary bg-primary hover:bg-neutral-800 transition-all px-8 py-3.5 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.12)] font-semibold"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-label-md text-label-md text-on-primary bg-primary hover:bg-neutral-800 transition-all px-6 sm:px-8 py-3.5 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.12)] font-semibold cursor-pointer"
               >
                 <span>Explore Programs</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
               <button
                 onClick={() => onOpenCounselor()}
-                className="inline-flex items-center justify-center font-label-md text-label-md text-on-surface bg-surface-container-low hover:bg-surface-container transition-all px-8 py-3.5 rounded-full border border-[#E5E7EB]"
+                className="w-full sm:w-auto inline-flex items-center justify-center font-label-md text-label-md text-on-surface bg-surface-container-low hover:bg-surface-container transition-all px-6 sm:px-8 py-3.5 rounded-full border border-[#E5E7EB] cursor-pointer"
               >
                 Talk to Our Team
               </button>
             </div>
 
             {/* Real Training Center Photo Marquee Strip */}
-            <div className="w-full pt-4 relative overflow-hidden -mx-4 sm:-mx-8 lg:-mx-12 max-w-[calc(100%+2rem)] sm:max-w-[calc(100%+4rem)] lg:max-w-[calc(100%+6rem)]">
+            <div className="w-full pt-3 relative overflow-hidden -mx-2 sm:-mx-6 max-w-[calc(100%+1rem)] sm:max-w-[calc(100%+3rem)]">
               <Marquee
                 speed={28}
                 pauseOnHover={true}
@@ -544,7 +544,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 {BOOTCAMP_PHOTOS.map((photo, idx) => (
                   <div
                     key={idx}
-                    className="relative shrink-0 h-44 sm:h-52 md:h-60 rounded-xl overflow-hidden border border-[#E5E7EB] shadow-sm bg-surface-container select-none"
+                    className="relative shrink-0 h-36 sm:h-48 md:h-56 rounded-xl overflow-hidden border border-[#E5E7EB] shadow-sm bg-surface-container select-none"
                   >
                     <img
                       src={photo.src}
@@ -562,23 +562,23 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               <div className="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-16 bg-gradient-to-l from-surface-container-lowest to-transparent z-10" />
             </div>
 
-            {/* Exactly 4 Clean Trust Badges from the Screenshot (no extra bulky text cards below) */}
-            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 pt-4 text-xs sm:text-sm text-neutral-600 font-medium">
-              <div className="inline-flex items-center gap-2">
+            {/* Clean Trust Badges */}
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-3 sm:gap-8 pt-2 text-xs sm:text-sm text-neutral-600 font-medium w-full">
+              <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2">
                 <GraduationCap className="w-4 h-4 text-neutral-500 shrink-0" />
-                <span>Multi-day Bootcamps</span>
+                <span className="truncate">Multi-day Bootcamps</span>
               </div>
-              <div className="inline-flex items-center gap-2">
+              <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2">
                 <Users className="w-4 h-4 text-neutral-500 shrink-0" />
-                <span>Industry Experts</span>
+                <span className="truncate">Industry Experts</span>
               </div>
-              <div className="inline-flex items-center gap-2">
+              <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2">
                 <Rocket className="w-4 h-4 text-neutral-500 shrink-0" />
-                <span>Project Ready</span>
+                <span className="truncate">Project Ready</span>
               </div>
-              <div className="inline-flex items-center gap-2">
+              <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2">
                 <CheckCircle2 className="w-4 h-4 text-neutral-500 shrink-0" />
-                <span>Corporate Standard</span>
+                <span className="truncate">Corporate Standard</span>
               </div>
             </div>
           </div>
@@ -588,9 +588,9 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           2. STAT STRIP CARD
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
-        <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-10 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
+        <div className="bg-surface-container-lowest rounded-2xl p-5 sm:p-8 lg:p-10 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {/* Stat 1: 1,200+ Students Placed */}
             <div className="flex flex-col gap-2 p-4 bg-surface-container-low/60 rounded-xl border border-transparent hover:border-[#E5E7EB] transition-colors">
               <div className="flex items-baseline gap-1">
@@ -694,9 +694,9 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           3. COURSES SECTION ("Accounting and Tally Courses Built for Real Jobs")
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
-        <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
-          <div className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-12">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
+        <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
+          <div className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
               <span className="w-2 h-2 rounded-full bg-secondary" />
               <span className="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase tracking-wider">
@@ -824,9 +824,9 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           4. 3-STEP PROGRESSION ("Your Roadway from Learner to Corporate Job")
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
-        <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB] overflow-hidden">
-          <div className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-10 sm:mb-12">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
+        <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB] overflow-hidden">
+          <div className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
               <span className="w-2 h-2 rounded-full bg-secondary" />
               <span className="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase tracking-wider">
@@ -960,9 +960,9 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           5. THE LK ADVANTAGE / SPLIT SECTION WITH STUDENT PORTAL PREVIEW
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
-        <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
-          <div className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-12">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
+        <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
+          <div className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
               <span className="w-2 h-2 rounded-full bg-secondary" />
               <span className="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase tracking-wider">
@@ -1564,9 +1564,9 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           10. FREQUENTLY ASKED QUESTIONS (ACCORDION)
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
-        <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
-          <div className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-12">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
+        <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
+          <div className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
               <span className="w-2 h-2 rounded-full bg-secondary" />
               <span className="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase tracking-wider">
@@ -1589,7 +1589,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 >
                   <button
                     onClick={() => toggleFaq(idx)}
-                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-title-sm text-title-sm font-bold text-on-surface"
+                    className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 font-title-sm text-title-sm font-bold text-on-surface cursor-pointer"
                   >
                     <span>{faq.q}</span>
                     {isOpen ? (
@@ -1600,7 +1600,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 pb-5 text-on-surface-variant font-body-sm text-body-sm leading-relaxed border-t border-[#E5E7EB]/60 pt-3">
+                    <div className="px-4 pb-4 sm:px-5 sm:pb-5 text-on-surface-variant font-body-sm text-body-sm leading-relaxed border-t border-[#E5E7EB]/60 pt-3">
                       {faq.a}
                     </div>
                   )}
@@ -1610,8 +1610,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           </div>
 
           {/* WhatsApp Guidance Card */}
-          <div className="max-w-3xl mx-auto mt-8 p-5 rounded-2xl bg-surface-container-low border border-[#E5E7EB] flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
+          <div className="max-w-3xl mx-auto mt-8 p-4 sm:p-5 rounded-2xl bg-surface-container-low border border-[#E5E7EB] flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3 text-center sm:text-left">
               <div className="w-10 h-10 rounded-full bg-emerald-100 text-secondary flex items-center justify-center shrink-0">
                 <MessageSquare className="w-5 h-5" />
               </div>
@@ -1624,7 +1624,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               href="https://wa.me/919876543210"
               target="_blank"
               rel="noreferrer"
-              className="px-6 py-2.5 rounded-full bg-secondary hover:bg-emerald-800 text-white font-label-md text-label-md font-semibold transition-all shadow-sm flex items-center gap-2 shrink-0"
+              className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-secondary hover:bg-emerald-800 text-white font-label-md text-label-md font-semibold transition-all shadow-sm flex items-center justify-center gap-2 shrink-0 cursor-pointer"
             >
               <MessageSquare className="w-4 h-4" />
               <span>Chat on WhatsApp</span>
@@ -1636,28 +1636,28 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           11. CLOSING HIGH CONTRAST BANNER
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-12">
-        <div className="bg-primary text-on-primary rounded-lg p-10 sm:p-14 lg:p-16 text-center flex flex-col items-center gap-6 shadow-[0_12px_32px_-4px_rgba(0,0,0,0.18)]">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-secondary-fixed" />
-            <span className="font-label-eyebrow text-label-eyebrow text-surface-bright uppercase tracking-wider">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-12">
+        <div className="bg-primary text-on-primary rounded-2xl sm:rounded-3xl p-6 sm:p-12 lg:p-16 text-center flex flex-col items-center gap-6 shadow-[0_12px_32px_-4px_rgba(0,0,0,0.18)]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-sm max-w-full">
+            <span className="w-2 h-2 rounded-full bg-secondary-fixed shrink-0" />
+            <span className="font-label-eyebrow text-[10px] sm:text-xs text-surface-bright uppercase tracking-wider truncate">
               ADMISSIONS OPEN • TIRUNELVELI JUNCTION
             </span>
           </div>
 
-          <h2 className="font-display text-headline-lg lg:text-display text-on-primary tracking-tight max-w-3xl text-balance">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-on-primary tracking-tight max-w-3xl text-balance">
             Ready to Start Your Accounting Career?
           </h2>
 
-          <p className="font-body-lg text-body-lg text-on-primary/80 max-w-2xl leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-on-primary/80 max-w-2xl leading-relaxed">
             Join 2,500+ successful learners at Tirunelveli's premier vocational accounts academy. Batches start every Monday.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 w-full sm:w-auto">
             <button
               type="button"
               onClick={() => onOpenCounselor()}
-              className="inline-flex items-center justify-center gap-2 font-label-md text-label-md !text-black text-black bg-white hover:bg-neutral-100 active:bg-neutral-200 transition-all px-8 py-3.5 rounded-full shadow-[0_4px_16px_rgba(255,255,255,0.25)] font-bold cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-label-md text-label-md !text-black text-black bg-white hover:bg-neutral-100 active:bg-neutral-200 transition-all px-6 sm:px-8 py-3.5 rounded-full shadow-[0_4px_16px_rgba(255,255,255,0.25)] font-bold cursor-pointer"
             >
               <Phone className="w-4 h-4 text-emerald-700" />
               <span className="!text-black text-black font-bold">Talk to Team</span>
@@ -1667,7 +1667,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               download="LK-Academy-Application-Form.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 font-label-md text-label-md !text-white text-white bg-primary-container hover:bg-neutral-900 active:bg-black px-8 py-3.5 rounded-full transition-all border border-white/25 font-semibold shadow-sm hover:border-white/50 cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 font-label-md text-label-md !text-white text-white bg-primary-container hover:bg-neutral-900 active:bg-black px-6 sm:px-8 py-3.5 rounded-full transition-all border border-white/25 font-semibold shadow-sm hover:border-white/50 cursor-pointer"
             >
               <Download className="w-4 h-4 text-emerald-400" />
               <span>Download Form</span>

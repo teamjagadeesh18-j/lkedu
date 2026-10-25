@@ -15,7 +15,7 @@ export const TermsScreen: React.FC<TermsScreenProps> = ({
   onOpenVerify,
 }) => {
   return (
-    <div className="w-full min-h-screen py-4 sm:py-8 px-4 sm:px-6 flex flex-col items-center">
+    <div className="w-full min-h-screen py-4 sm:py-8 px-3 sm:px-6 flex flex-col items-center">
       {/* Container wrapper */}
       <div className="max-w-4xl w-full mx-auto">
         {/* Navigation / Switcher Bar */}
@@ -46,7 +46,7 @@ export const TermsScreen: React.FC<TermsScreenProps> = ({
         </div>
 
         {/* Main Document Card */}
-        <article className="bg-white rounded-3xl p-8 sm:p-14 md:p-16 shadow-[0_12px_36px_-6px_rgba(0,0,0,0.06),0_4px_16px_-2px_rgba(0,0,0,0.03)] border border-gray-200/90 text-gray-800">
+        <article className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-12 md:p-16 shadow-[0_12px_36px_-6px_rgba(0,0,0,0.06),0_4px_16px_-2px_rgba(0,0,0,0.03)] border border-gray-200/90 text-gray-800">
           {/* Header */}
           <header className="border-b border-gray-100 pb-8 mb-8 sm:mb-10">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-950 tracking-tight mb-3">
