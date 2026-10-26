@@ -552,6 +552,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                       alt={photo.alt}
                       className="h-full w-auto object-cover select-none pointer-events-none"
                       loading="eager"
+                      decoding="async"
                       draggable={false}
                     />
                   </div>
@@ -694,7 +695,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           2B. HIRING PARTNERS MARQUEE SCROLLER
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
+      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12 content-visibility-auto">
         <Reveal delay={0.1}>
           <MarqueeLogoScroller
             title="Top Corporate Hiring Partners"
@@ -709,7 +710,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           3. COURSES SECTION ("Accounting and Tally Courses Built for Real Jobs")
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12 content-visibility-auto">
         <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
           <Reveal className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
@@ -840,7 +841,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           4. 3-STEP PROGRESSION ("Your Roadway from Learner to Corporate Job")
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12 content-visibility-auto">
         <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB] overflow-hidden">
           <Reveal className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
@@ -985,7 +986,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           5. THE LK ADVANTAGE / SPLIT SECTION WITH STUDENT PORTAL PREVIEW
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12 content-visibility-auto">
         <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
           <Reveal className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
@@ -1200,7 +1201,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           6. PLACEMENT SUPPORT THAT CONNECTS YOU TO EMPLOYERS
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
+      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12 content-visibility-auto">
         <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
           <Reveal className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
@@ -1285,7 +1286,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           7. EARN A TALLY EDUCATION (TEPL) CERTIFICATE SECTION
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
+      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12 content-visibility-auto">
         <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left: Info & Bullets */}
@@ -1386,7 +1387,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                         src="/certificate-cropped.png"
                         alt="Original LK Education Tally Professional Certificate"
                         className="w-full h-auto object-contain transition-transform duration-300 group-hover/img:scale-[1.015]"
-                        loading="eager"
+                        loading="lazy"
+                        decoding="async"
                       />
                       
                       {/* Hover Overlay Hint */}
@@ -1454,7 +1456,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           8. INSIDE OUR TIRUNELVELI TRAINING CENTRE
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
+      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12 content-visibility-auto">
         <div className="bg-surface-container-lowest rounded-lg p-8 sm:p-12 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
           <Reveal className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
@@ -1480,6 +1482,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <img
                   src="/campus/hero-bootcamp-speaker-session.jpg"
                   alt="Practical Hands-on Accounting Workshop"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -1497,6 +1501,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <img
                   src="/campus/lecture-hall-session.jpg"
                   alt="Dedicated Seminar & Lecture Hall"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -1514,6 +1520,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <img
                   src="/campus/student-seminar-podium.jpg"
                   alt="Interactive Seminar & Presentation Hall"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -1531,6 +1539,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <img
                   src="/campus/certificate-distribution.jpg"
                   alt="Certificate Convocation & Felicitation"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -1548,7 +1558,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           9. STUDENT TESTIMONIALS ("What Our Students Say")
           ========================================================================= */}
-      <section id="testimonials" className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12">
+      <section id="testimonials" className="max-w-7xl mx-auto w-full px-4 sm:px-6 mb-8 lg:mb-12 content-visibility-auto">
         <div className="bg-surface-container-lowest rounded-lg p-6 sm:p-10 lg:p-14 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB] overflow-hidden">
           <Reveal className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
@@ -1590,7 +1600,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           10. FREQUENTLY ASKED QUESTIONS (ACCORDION)
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12 content-visibility-auto">
         <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-16 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
           <Reveal className="text-center max-w-3xl mx-auto flex flex-col items-center gap-3 mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-[#E5E7EB]">
@@ -1663,7 +1673,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
       {/* =========================================================================
           11. CLOSING HIGH CONTRAST BANNER
           ========================================================================= */}
-      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-12">
+      <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-12 content-visibility-auto">
         <Reveal className="bg-primary text-on-primary rounded-2xl sm:rounded-3xl p-6 sm:p-12 lg:p-16 text-center flex flex-col items-center gap-6 shadow-[0_12px_32px_-4px_rgba(0,0,0,0.18)]">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-sm max-w-full">
             <span className="w-2 h-2 rounded-full bg-secondary-fixed shrink-0" />

@@ -530,7 +530,6 @@ export default function BlockTextReveal(props: Partial<Props>) {
         if (isStatic) return
         if (typeof window === "undefined") return
 
-        let armed = true
         setProgressRef.current(0)
 
         const play = () => {
@@ -547,29 +546,38 @@ export default function BlockTextReveal(props: Partial<Props>) {
         }
         playRef.current = play
 
-        const check = () => {
-            if (!armed) return
-            const el = hostRef.current
-            if (!el) return
-            const rect = el.getBoundingClientRect()
-            const vh = window.innerHeight || 0
-            const triggerY =
-                viewport === "top" ? 0 : viewport === "bottom" ? vh : vh * 0.8
-            if (rect.top <= triggerY) {
-                armed = false
-                window.removeEventListener("scroll", check)
-                window.removeEventListener("resize", check)
-                play()
-            }
+        const el = hostRef.current
+        if (!el) return
+
+        if (!("IntersectionObserver" in window)) {
+            play()
+            return
         }
 
-        check()
-        window.addEventListener("scroll", check, { passive: true })
-        window.addEventListener("resize", check)
+        const rootMargin =
+            viewport === "top"
+                ? "0px"
+                : viewport === "bottom"
+                  ? "0px"
+                  : "0px 0px -20% 0px"
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                for (const entry of entries) {
+                    if (entry.isIntersecting) {
+                        observer.disconnect()
+                        play()
+                        break
+                    }
+                }
+            },
+            { rootMargin, threshold: 0 }
+        )
+
+        observer.observe(el)
+
         return () => {
-            armed = false
-            window.removeEventListener("scroll", check)
-            window.removeEventListener("resize", check)
+            observer.disconnect()
             if (rafRef.current) cancelAnimationFrame(rafRef.current)
         }
     }, [isStatic, revealType, viewport, speed, stagger, lineCount])

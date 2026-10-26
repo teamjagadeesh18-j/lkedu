@@ -7,9 +7,40 @@ export interface UseInViewOptions {
   triggerOnce?: boolean;
 }
 
+type ObserverCallback = (entry: IntersectionObserverEntry) => void;
+
+interface ObserverInstance {
+  observer: IntersectionObserver;
+  callbacks: Map<Element, ObserverCallback>;
+}
+
+// Global pool of shared IntersectionObserver instances to prevent observer explosion
+const observerMap = new Map<string, ObserverInstance>();
+
+function getPooledObserver(
+  key: string,
+  options: IntersectionObserverInit
+): ObserverInstance {
+  let instance = observerMap.get(key);
+  if (!instance) {
+    const callbacks = new Map<Element, ObserverCallback>();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const cb = callbacks.get(entry.target);
+        if (cb) {
+          cb(entry);
+        }
+      });
+    }, options);
+    instance = { observer, callbacks };
+    observerMap.set(key, instance);
+  }
+  return instance;
+}
+
 /**
  * Custom hook to detect when an element enters the viewport.
- * Uses the Intersection Observer API with fallback for unsupported environments
+ * Uses a high-performance pooled Intersection Observer with fallback for unsupported environments
  * and respects the `prefers-reduced-motion` accessibility preference.
  */
 export function useInView<T extends HTMLElement = HTMLDivElement>(
@@ -60,30 +91,34 @@ export function useInView<T extends HTMLElement = HTMLDivElement>(
     const element = ref.current;
     if (!element) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            if (triggerOnce) {
-              observer.unobserve(entry.target);
-            }
-          } else if (!triggerOnce) {
-            setIsVisible(false);
-          }
-        });
-      },
-      {
-        threshold,
-        rootMargin,
-        root,
-      }
-    );
+    // Create a key for the pool based on options
+    const thresholdKey = Array.isArray(threshold) ? threshold.join(',') : threshold;
+    const poolKey = `${rootMargin}_${thresholdKey}_${root ? 'custom' : 'doc'}`;
 
+    const { observer, callbacks } = getPooledObserver(poolKey, {
+      threshold,
+      rootMargin,
+      root: root || undefined,
+    });
+
+    const handleIntersect: ObserverCallback = (entry) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        if (triggerOnce) {
+          callbacks.delete(element);
+          observer.unobserve(element);
+        }
+      } else if (!triggerOnce) {
+        setIsVisible(false);
+      }
+    };
+
+    callbacks.set(element, handleIntersect);
     observer.observe(element);
 
     return () => {
-      observer.disconnect();
+      callbacks.delete(element);
+      observer.unobserve(element);
     };
   }, [threshold, rootMargin, root, triggerOnce, isVisible]);
 
@@ -101,3 +136,4 @@ export function useInView<T extends HTMLElement = HTMLDivElement>(
 }
 
 export default useInView;
+

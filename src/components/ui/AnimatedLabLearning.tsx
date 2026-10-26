@@ -104,6 +104,8 @@ export const AnimatedLabLearning: React.FC<AnimatedLabLearningProps> = ({ classN
       <img
         src="/practical-lab-learning.jpg"
         alt="LK Practical Accounting & Dual-Screen GST Lab Learning"
+        loading="lazy"
+        decoding="async"
         className="w-full h-auto block object-contain mix-blend-multiply pointer-events-none"
       />
 

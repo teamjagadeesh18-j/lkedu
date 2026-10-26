@@ -61,6 +61,8 @@ export const AnimatedRoadmap: React.FC<AnimatedRoadmapProps> = ({ className = ''
       <img
         src="/institute-to-job.jpg"
         alt="Pathway from LK Training Institute to Dream Job"
+        loading="lazy"
+        decoding="async"
         className="w-full h-auto block object-contain mix-blend-multiply pointer-events-none"
       />
 

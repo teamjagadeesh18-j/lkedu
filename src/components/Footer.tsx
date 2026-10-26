@@ -13,7 +13,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenVerify, onOpenCounselor }) => {
   return (
-    <div className="w-full px-3 sm:px-6 mb-4 mt-12 sm:mt-20">
+    <div className="w-full px-3 sm:px-6 mb-4 mt-12 sm:mt-20 content-visibility-auto">
       <Reveal as="footer" className="max-w-7xl mx-auto bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB] overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 pb-10">
           {/* Col 1: Brand Info */}
@@ -22,6 +22,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenVerify, onOpen
               <img
                 alt="LK Education Logo"
                 className="h-12 sm:h-14 w-auto object-contain"
+                loading="lazy"
+                decoding="async"
                 src={ASSETS.logo}
                 onError={(e) => {
                   (e.target as HTMLElement).style.display = 'none';
