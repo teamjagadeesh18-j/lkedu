@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
-import { getWhatsAppUrl } from '../lib/contact';
 
 export const PromotionalPosterModal: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +11,7 @@ export const PromotionalPosterModal: React.FC = () => {
       const hasSeen = sessionStorage.getItem('tally_poster_popup_seen');
       if (hasSeen) return;
     } catch {
-      // In case storage access is restricted
+      // Handle private browsing or restricted storage environments
     }
 
     // Appears exactly 2 seconds after page loads
@@ -61,17 +60,13 @@ export const PromotionalPosterModal: React.FC = () => {
 
   if (!isOpen) return null;
 
-  const whatsappInquiryUrl = getWhatsAppUrl(
-    'Hi LK Educations, I saw your Institute of Tally Learning promotional poster and want to enroll in the Job-Ready in 3 Months program. Please share batch timings and fees.'
-  );
-
   return (
     <div
       role="dialog"
       aria-modal="true"
       aria-label="Institute of Tally Learning offer"
       onClick={(e) => {
-        // Closes when clicking dark overlay outside the image
+        // Closes only when clicking dark overlay outside the image
         if (e.target === e.currentTarget) {
           handleClose();
         }
@@ -119,14 +114,8 @@ export const PromotionalPosterModal: React.FC = () => {
           <X className="w-5 h-5 stroke-[2.5]" />
         </button>
 
-        {/* Clickable Image opening WhatsApp Inquiry in a new tab */}
-        <a
-          href={whatsappInquiryUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Click to enroll on WhatsApp"
-          className="block w-full h-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] ring-1 ring-black/10 transition-transform active:scale-[0.99] focus:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400 cursor-pointer"
-        >
+        {/* Static, non-clickable image container with cursor: default */}
+        <div className="w-full h-full rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] ring-1 ring-black/10">
           <img
             src="/images/tally-poster.jpg"
             alt="Institute of Tally Learning: job ready in 3 months"
@@ -134,9 +123,9 @@ export const PromotionalPosterModal: React.FC = () => {
             height={1024}
             loading="eager"
             decoding="async"
-            className="w-full h-full aspect-square object-contain rounded-2xl block bg-[#fefcf3]"
+            className="w-full h-full aspect-square object-contain rounded-2xl block bg-[#fefcf3] cursor-default"
           />
-        </a>
+        </div>
       </div>
     </div>
   );
