@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { SAMPLE_CERTIFICATES } from '../data/mockData';
 import { VerifiableCertificate } from '../types';
 import {
@@ -27,6 +27,28 @@ export const CertificateVerificationModal: React.FC<CertificateVerificationModal
   const [certInput, setCertInput] = useState<string>(defaultCertId);
   const [result, setResult] = useState<VerifiableCertificate | null>(SAMPLE_CERTIFICATES[0]);
   const [hasSearched, setHasSearched] = useState<boolean>(true);
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    modalRef.current?.focus();
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose]);
 
   useEffect(() => {
     if (isOpen) {
@@ -60,8 +82,20 @@ export const CertificateVerificationModal: React.FC<CertificateVerificationModal
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
-      <div className="bg-white rounded-2xl max-w-2xl w-full p-4 sm:p-8 shadow-2xl border border-[#E5E7EB] my-auto max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in-95">
+    <div
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cert-verification-title"
+      className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 overflow-y-auto"
+    >
+      <div
+        ref={modalRef}
+        tabIndex={-1}
+        className="bg-white rounded-2xl max-w-2xl w-full p-4 sm:p-8 shadow-2xl border border-[#E5E7EB] my-auto max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in-95 outline-none"
+      >
         {/* Header */}
         <div className="flex items-center justify-between pb-4 border-b border-[#E5E7EB]">
           <div className="flex items-center gap-2">
@@ -69,7 +103,7 @@ export const CertificateVerificationModal: React.FC<CertificateVerificationModal
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-title-sm text-title-sm font-bold text-on-surface">
+              <h3 id="cert-verification-title" className="font-title-sm text-title-sm font-bold text-on-surface">
                 TEPL Certificate Online Verification
               </h3>
               <p className="text-xs text-on-surface-variant font-mono">

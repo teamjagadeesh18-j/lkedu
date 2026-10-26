@@ -199,7 +199,7 @@ import {
   X
 } from 'lucide-react';
 import { WhatsAppIcon } from './ui/WhatsAppIcon';
-import { openEnrollWhatsApp } from '../lib/contact';
+import { openEnrollWhatsApp, getWhatsAppUrl } from '../lib/contact';
 import { AnimatedRoadmap } from './ui/AnimatedRoadmap';
 import { AnimatedLabLearning } from './ui/AnimatedLabLearning';
 import { Reveal } from './Reveal';
@@ -1658,9 +1658,9 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               </div>
             </div>
             <a
-              href="https://wa.me/919876543210"
+              href={getWhatsAppUrl('Hi LK Educations, I have questions regarding admissions and courses.')}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-secondary hover:bg-emerald-800 text-white font-label-md text-label-md font-semibold transition-all shadow-sm flex items-center justify-center gap-2 shrink-0 cursor-pointer"
             >
               <MessageSquare className="w-4 h-4" />

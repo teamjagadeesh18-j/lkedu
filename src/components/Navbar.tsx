@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ASSETS } from '../data/mockData';
+import { CONTACT_INFO } from '../lib/contact';
 import { Menu, X, User, PhoneCall, ShieldCheck } from 'lucide-react';
 
 interface NavbarProps {
@@ -17,6 +18,18 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
+  const profileDropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!profileDropdownOpen) return;
+    const handleClickOutside = (e: MouseEvent) => {
+      if (profileDropdownRef.current && !profileDropdownRef.current.contains(e.target as Node)) {
+        setProfileDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [profileDropdownOpen]);
 
   const navLinks = [
     { label: 'Home', path: 'home' },
@@ -91,7 +104,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
 
           {/* Desktop User/Center Menu - STRICTLY HIDDEN ON MOBILE */}
-          <div className="hidden lg:block relative">
+          <div ref={profileDropdownRef} className="hidden lg:block relative">
             <button
               onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
               className="w-8 h-8 rounded-full bg-black hover:bg-neutral-800 text-white flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black cursor-pointer shadow-xs"
@@ -190,8 +203,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Direct Campus Help Desk Footer */}
           <div className="pt-2 text-center text-xs text-neutral-500 border-t border-neutral-100">
             <span>Tirunelveli Campus: </span>
-            <a href="tel:04622333330" className="text-neutral-900 font-semibold hover:underline">
-              0462-2333330
+            <a href={`tel:${CONTACT_INFO.primaryTel}`} className="text-neutral-900 font-semibold hover:underline">
+              {CONTACT_INFO.primaryPhone}
             </a>
           </div>
         </div>

@@ -3,11 +3,11 @@
  */
 
 export const CONTACT_INFO = {
-  primaryPhone: '+91 94431 54224',
-  secondaryPhone: '+91 98421 54224',
-  primaryTel: '+919443154224',
-  secondaryTel: '+919842154224',
-  whatsappNumber: '919443154224',
+  primaryPhone: '+91 94886 87563',
+  secondaryPhone: '+91 94886 87563',
+  primaryTel: '+919488687563',
+  secondaryTel: '+919488687563',
+  whatsappNumber: '919488687563',
   email: 'lkeduganesh@gmail.com',
   address: '182, S. N. High Road, Sripuram, Tirunelveli Junction, Tirunelveli 627001, Tamil Nadu',
   landmark: 'Opposite Junction Bus Stand Arch / Near Post Office',

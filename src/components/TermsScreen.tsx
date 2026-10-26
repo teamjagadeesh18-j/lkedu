@@ -1,7 +1,7 @@
 import React from 'react';
 import { ShieldCheck, Calendar, ArrowLeft, ArrowUpRight, FileText, Phone, Mail, MapPin } from 'lucide-react';
 import { WhatsAppIcon } from './ui/WhatsAppIcon';
-import { openGeneralWhatsApp } from '../lib/contact';
+import { CONTACT_INFO, openGeneralWhatsApp } from '../lib/contact';
 
 interface TermsScreenProps {
   onNavigate: (path: string) => void;
@@ -174,12 +174,8 @@ export const TermsScreen: React.FC<TermsScreenProps> = ({
                   <Phone className="w-5 h-5 text-gray-700 shrink-0" />
                   <span className="text-gray-600">
                     Phone (Talk to Team):{' '}
-                    <a href="tel:+919443154224" className="font-semibold text-black hover:underline">
-                      +91 94431 54224
-                    </a>{' '}
-                    /{' '}
-                    <a href="tel:+919842154224" className="font-semibold text-black hover:underline">
-                      +91 98421 54224
+                    <a href={`tel:${CONTACT_INFO.primaryTel}`} className="font-semibold text-black hover:underline">
+                      {CONTACT_INFO.primaryPhone}
                     </a>
                   </span>
                 </div>
@@ -192,7 +188,7 @@ export const TermsScreen: React.FC<TermsScreenProps> = ({
                       onClick={() => openGeneralWhatsApp('Hi LK Educations, I have an inquiry regarding your Terms & Conditions.')}
                       className="font-semibold text-[#25D366] hover:underline cursor-pointer"
                     >
-                      Chat on WhatsApp (+91 94431 54224)
+                      Chat on WhatsApp ({CONTACT_INFO.primaryPhone})
                     </button>
                   </span>
                 </div>

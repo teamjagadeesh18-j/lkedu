@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { X, Phone, Calendar, CheckCircle2, ShieldCheck, ChevronDown, ChevronUp, Clock, User, ArrowRight } from 'lucide-react';
 import { WhatsAppIcon } from './ui/WhatsAppIcon';
 import { CONTACT_INFO, openGeneralWhatsApp, triggerPhoneCall } from '../lib/contact';
@@ -21,6 +21,30 @@ export const CounselorModal: React.FC<CounselorModalProps> = ({
   const [timeSlot, setTimeSlot] = useState('Today (Within 2 Hours)');
   const [mode, setMode] = useState<'callback' | 'lab_visit'>('callback');
   const [confirmed, setConfirmed] = useState(false);
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    // Initial focus on dialog
+    modalRef.current?.focus();
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -39,6 +63,19 @@ export const CounselorModal: React.FC<CounselorModalProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setConfirmed(true);
+    const msg = [
+      `*LK Educations - Callback / Demo Request*`,
+      `• Candidate: ${name}`,
+      `• Phone: ${phone}`,
+      `• Course: ${selectedProgram}`,
+      `• Preferred Slot: ${timeSlot}`,
+      `• Mode: ${mode === 'callback' ? 'Phone Callback' : 'Lab Demo Visit'}`
+    ].join('\n');
+    try {
+      openGeneralWhatsApp(msg);
+    } catch {
+      // popup blocker fallback
+    }
   };
 
   const handleReset = () => {
@@ -48,15 +85,27 @@ export const CounselorModal: React.FC<CounselorModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
-      <div className="bg-white rounded-2xl sm:rounded-3xl max-w-lg w-full p-4 sm:p-8 shadow-2xl border border-[#E5E7EB] animate-in fade-in zoom-in-95 my-auto max-h-[90vh] overflow-y-auto">
+    <div
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="counselor-dialog-title"
+      className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 overflow-y-auto"
+    >
+      <div
+        ref={modalRef}
+        tabIndex={-1}
+        className="bg-white rounded-2xl sm:rounded-3xl max-w-lg w-full p-4 sm:p-8 shadow-2xl border border-[#E5E7EB] animate-in fade-in zoom-in-95 my-auto max-h-[90vh] overflow-y-auto outline-none"
+      >
         {/* Modal Header */}
         <div className="flex items-start justify-between pb-4 border-b border-gray-100">
           <div>
             <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container text-xs font-semibold text-gray-700 mb-1.5">
               <span>Tirunelveli Admissions Desk</span>
             </div>
-            <h3 className="text-xl sm:text-2xl font-extrabold text-gray-950 tracking-tight">
+            <h3 id="counselor-dialog-title" className="text-xl sm:text-2xl font-extrabold text-gray-950 tracking-tight">
               Talk to Our Team
             </h3>
             <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
@@ -220,7 +269,7 @@ export const CounselorModal: React.FC<CounselorModalProps> = ({
                   <input
                     type="tel"
                     required
-                    placeholder="e.g. 94431 XXXXX"
+                    placeholder="e.g. 94886 XXXXX"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     className="w-full px-3.5 py-2 rounded-xl bg-gray-50 border border-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-black"

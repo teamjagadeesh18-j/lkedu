@@ -31,9 +31,31 @@ export const ContactScreen: React.FC = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
+  const buildInquiryMessage = () => {
+    return [
+      `*LK Educations - Course Admission Inquiry*`,
+      `----------------------------------------`,
+      `• *Student Name:* ${formData.fullName}`,
+      `• *Phone:* ${formData.phoneNumber}`,
+      formData.email ? `• *Email:* ${formData.email}` : null,
+      `• *Course of Interest:* ${formData.selectedProgram}`,
+      `• *Batch Timing:* ${formData.batchPreference}`,
+      `• *Background:* ${formData.background}`,
+      formData.notes ? `• *Notes / Queries:* ${formData.notes}` : null,
+      `----------------------------------------`,
+      `_Sent via official website inquiry form_`
+    ].filter(Boolean).join('\n');
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    // Connect form directly to admissions WhatsApp desk (+91 94886 87563)
+    try {
+      openGeneralWhatsApp(buildInquiryMessage());
+    } catch (err) {
+      console.warn('WhatsApp redirect prevented:', err);
+    }
   };
 
   return (
@@ -213,21 +235,47 @@ export const ContactScreen: React.FC = () => {
           <Reveal delay={0.2} className="lg:col-span-7">
             <div className="bg-surface-container-lowest rounded-2xl p-8 sm:p-10 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB]">
               {submitted ? (
-                <div className="p-8 text-center flex flex-col items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+                <div className="p-6 sm:p-8 text-center flex flex-col items-center gap-4">
+                  <div className="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center text-secondary">
                     <CheckCircle2 className="w-10 h-10" />
                   </div>
                   <h3 className="font-headline-sm text-headline-sm font-bold text-on-surface">
-                    Inquiry Received!
+                    Inquiry Transmitted Successfully!
                   </h3>
                   <p className="font-body-md text-body-md text-on-surface-variant max-w-md">
-                    Thank you, <span className="font-bold text-on-surface">{formData.fullName}</span>. Our senior counselor Ganesh Kumar will call you at <span className="font-bold text-on-surface">{formData.phoneNumber}</span> within 2 working hours to confirm your lab seat.
+                    Thank you, <span className="font-bold text-on-surface">{formData.fullName}</span>. Your inquiry for <span className="font-bold text-on-surface">{formData.selectedProgram}</span> has been routed to our Tirunelveli admissions desk.
                   </p>
+
+                  <div className="p-4 bg-surface-container-low rounded-2xl border border-[#E5E7EB] text-xs text-on-surface-variant text-left w-full max-w-md space-y-1.5 my-1">
+                    <div><span className="font-semibold text-on-surface">Candidate:</span> {formData.fullName}</div>
+                    <div><span className="font-semibold text-on-surface">Phone:</span> {formData.phoneNumber}</div>
+                    <div><span className="font-semibold text-on-surface">Course:</span> {formData.selectedProgram}</div>
+                    <div><span className="font-semibold text-on-surface">Batch Slot:</span> {formData.batchPreference}</div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full max-w-md mt-2">
+                    <button
+                      type="button"
+                      onClick={() => openGeneralWhatsApp(buildInquiryMessage())}
+                      className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-[#25D366] text-white text-xs sm:text-sm font-semibold hover:bg-[#1EBE5D] transition-colors"
+                    >
+                      <WhatsAppIcon className="w-4 h-4 text-white" />
+                      <span>Open on WhatsApp</span>
+                    </button>
+                    <a
+                      href={`mailto:${CONTACT_INFO.email}?subject=${encodeURIComponent(`Admission Inquiry - ${formData.selectedProgram} - ${formData.fullName}`)}&body=${encodeURIComponent(buildInquiryMessage())}`}
+                      className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-black text-white text-xs sm:text-sm font-semibold hover:bg-neutral-800 transition-colors"
+                    >
+                      <Mail className="w-4 h-4" />
+                      <span>Send via Email</span>
+                    </a>
+                  </div>
+
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="mt-4 px-6 py-2.5 rounded-full bg-black text-white font-label-md text-label-md"
+                    className="mt-2 text-xs font-semibold text-gray-500 hover:text-black transition-colors"
                   >
-                    Submit Another Inquiry
+                    ← Submit Another Inquiry
                   </button>
                 </div>
               ) : (
@@ -262,7 +310,7 @@ export const ContactScreen: React.FC = () => {
                       <input
                         type="tel"
                         required
-                        placeholder="e.g. 98421 XXXXX"
+                        placeholder="e.g. 94886 XXXXX"
                         value={formData.phoneNumber}
                         onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
                         className="w-full px-4 py-2.5 rounded-xl bg-surface-container-low border border-[#E5E7EB] text-sm focus:outline-none focus:ring-1 focus:ring-black"
