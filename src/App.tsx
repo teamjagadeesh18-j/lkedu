@@ -14,6 +14,7 @@ const TermsScreen = lazy(() => import('./components/TermsScreen').then(m => ({ d
 const PrivacyScreen = lazy(() => import('./components/PrivacyScreen').then(m => ({ default: m.PrivacyScreen })));
 const CounselorModal = lazy(() => import('./components/CounselorModal').then(m => ({ default: m.CounselorModal })));
 const CertificateVerificationModal = lazy(() => import('./components/CertificateVerificationModal').then(m => ({ default: m.CertificateVerificationModal })));
+const PromotionalPosterModal = lazy(() => import('./components/PromotionalPosterModal').then(m => ({ default: m.PromotionalPosterModal })));
 
 const ROUTE_META: Record<string, { title: string; desc: string }> = {
   home: {
@@ -260,6 +261,11 @@ export default function App() {
           />
         </Suspense>
       )}
+
+      {/* 2-Second Timed Promotional Poster Popup (SessionStorage frequency cap) */}
+      <Suspense fallback={null}>
+        <PromotionalPosterModal />
+      </Suspense>
     </div>
   );
 }
