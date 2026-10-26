@@ -43,29 +43,6 @@ export const FACULTY_DATA: FacultyMember[] = [
 
 export const PROGRAMS_DATA: Program[] = [
   {
-    id: 'job-ready-3-months',
-    title: 'Job-Ready in 3 Months (TallyPrime, TallyEssential & MS-Office)',
-    code: 'TEPL-DIPLOMA-3M',
-    level: 'Advanced',
-    duration: '3 Months (90 Days)',
-    hours: '180 Hours (Lab Intensive + MS-Office)',
-    mode: 'Dual-Monitor Lab + Corporate Placement Drills',
-    certification: 'TEPL Official Certification + MS-Office Proficiency',
-    tagline: 'Your Better Future In Computerised Accounting: Get Certified, Recognised & Employed.',
-    description: 'Our premier all-in-one flagship career track combining TallyEssential (Levels 1-3), TallyPrime latest release, and the complete MS-Office Suite (Excel financial modeling, Word audit notes, PowerPoint MIS slides, Outlook communication). Designed to take graduates to corporate placement in exactly 90 days.',
-    keyTopics: [
-      'TallyEssential & TallyPrime: Complete Double-Entry, Inventory & Bank Reconciliation (BRS)',
-      'Statutory Taxation Mastery: Intra/Inter-State GST Invoicing, E-Way Bill & GSTR-2B Matching',
-      'Direct Taxation & Payroll: Section-wise TDS Deduction, Challan 281 & Salary Structuring',
-      'MS-Excel for Accountants: Advanced Formulas, VLOOKUP/XLOOKUP, Pivot Tables & MIS Modeling',
-      'MS-Word & PowerPoint: Professional Audit Reports, Voucher Proofs & Executive Financial Slides',
-      'MS-Outlook & Corporate Soft Skills: Email Etiquette, Client Ledger Inquiries & Interview Drills'
-    ],
-    audience: ['B.Com / BBA / M.Com freshers', 'Non-commerce career pivoters', 'Candidates targeting immediate accounting employment'],
-    labProjectsCount: 36,
-    featured: true
-  },
-  {
     id: 'tally-essentials',
     title: 'Tally Essentials',
     level: 'Foundation',
@@ -333,17 +310,6 @@ export const PROGRAMS_DATA: Program[] = [
 
 export const CERTIFICATION_PROGRAMS: CertificationProgramItem[] = [
   {
-    id: 'LK-3M-JOBREADY',
-    title: 'Job-Ready in 3 Months (TallyPrime + MS-Office)',
-    category: 'Job-Ready Diplomas',
-    description: 'This premier credential confirms successful completion of the intensive 3-Month practical diploma combining TallyPrime, TallyEssential (Levels 1-3), and the complete MS-Office corporate suite with dual-screen lab assessments.',
-    issuedYear: '2026',
-    badges: ['Certified', 'Recognised', 'Employed', 'TEPL Authorized'],
-    keySkills: ['TallyPrime 4.x', 'TallyEssential', 'MS-Excel Financial Modeling', 'GST & TDS Returns', 'Corporate Word & PPT'],
-    duration: '180 Hours',
-    programSlug: 'job-ready-3-months'
-  },
-  {
     id: 'LK-1024',
     title: 'Tally Professional',
     category: 'Tally & ERP',
@@ -423,18 +389,6 @@ export const CERTIFICATION_PROGRAMS: CertificationProgramItem[] = [
 ];
 
 export const SAMPLE_CERTIFICATES: VerifiableCertificate[] = [
-  {
-    certificateId: 'LK-3M-JOBREADY',
-    studentName: 'R. Kausalya Devi',
-    courseTitle: 'Job-Ready in 3 Months (TallyPrime + MS-Office)',
-    grade: 'Distinction',
-    score: '99.2%',
-    issueDate: 'Issued: 2026',
-    centerId: 'TEPL-TN-627001',
-    centerName: 'LK Educations, Institute of Tally Learning',
-    verificationStatus: 'Verified & Authentic',
-    teplCandidateId: 'TEPL-TN-3M-2026-9042'
-  },
   {
     certificateId: 'LK-1024',
     studentName: 'S. Kanthimathinathan',

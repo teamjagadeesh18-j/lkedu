@@ -41,7 +41,6 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
 
   const categories = [
     'All',
-    'Job-Ready Diplomas',
     'Tally & ERP',
     'GST & Taxation',
     'Financial Markets',
@@ -67,10 +66,10 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
       <section className="max-w-7xl mx-auto w-full px-3 sm:px-6 mb-8 lg:mb-12">
         <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-5 sm:p-10 lg:p-14 shadow-[0_4px_20px_-2px_rgba(17,24,39,0.04)] border border-[#E5E7EB] text-center">
           <div className="max-w-3xl mx-auto flex flex-col items-center gap-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-low border border-[#E5E7EB]">
-              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low border border-[#E5E7EB]">
+              <span className="w-2 h-2 rounded-full bg-secondary" />
               <span className="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase tracking-wider">
-                TEPL • INSTITUTE OF TALLY LEARNING
+                PROFESSIONAL CERTIFICATIONS
               </span>
             </div>
 
@@ -79,40 +78,22 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
             </h1>
 
             <p className="text-xs sm:text-base text-on-surface-variant leading-relaxed">
-              <span className="font-serif italic font-semibold text-neutral-900 block mb-1">
-                "Your Better Future In Computerised Accounting"
-              </span>
               Earn industry-recognized credentials verified through cryptographically secured QR codes and official TEPL candidate directories. Designed for tangible career advancement across commercial accounting, taxation, and financial auditing.
             </p>
 
-            {/* 3-Step "GET" Banner Inspired by Flyer */}
-            <div className="inline-flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl bg-gradient-to-r from-blue-50 via-emerald-50 to-amber-50 border border-neutral-200 text-xs font-bold shadow-xs">
-              <span className="px-3 py-1 rounded-xl bg-blue-600 text-white shadow-xs">
-                1. GET CERTIFIED
-              </span>
-              <span className="text-neutral-400">→</span>
-              <span className="px-3 py-1 rounded-xl bg-emerald-600 text-white shadow-xs">
-                2. GET RECOGNISED
-              </span>
-              <span className="text-neutral-400">→</span>
-              <span className="px-3 py-1 rounded-xl bg-amber-600 text-white shadow-xs">
-                3. GET EMPLOYED
-              </span>
-            </div>
-
             {/* Trust highlights */}
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 pt-1 text-xs text-neutral-600 font-medium">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 pt-2 text-xs text-neutral-600 font-medium">
               <span className="inline-flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 <span>Cryptographically Verifiable QR</span>
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>Job Ready in 3 Months Track</span>
+                <span>Official TEPL Partner Credentials</span>
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>Official TEPL Partner Credentials</span>
+                <span>Industry-Standard Curriculum</span>
               </span>
             </div>
 

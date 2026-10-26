@@ -60,10 +60,10 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
 
           <div className="relative z-10 max-w-4xl flex flex-col items-start gap-5 sm:gap-6">
             {/* Eyebrow Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-low border border-[#E5E7EB]">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low border border-[#E5E7EB]">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
               <span className="font-label-eyebrow text-label-eyebrow text-on-surface-variant uppercase tracking-wider">
-                TEPL • INSTITUTE OF TALLY LEARNING • ABOUT US
+                ABOUT LK EDUCATION
               </span>
             </div>
 
@@ -74,10 +74,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
 
             {/* Short Intro */}
             <p className="text-sm sm:text-base lg:text-lg text-neutral-600 leading-relaxed max-w-3xl">
-              <span className="font-serif italic font-semibold text-neutral-900 block mb-1">
-                "Your Better Future In Computerised Accounting."
-              </span>
-              Founded in Tirunelveli with a singular mission: to close the gap between textbook college commerce degrees and the real, fast-paced accounting demands of modern businesses. As an authorized TEPL Institute of Tally Learning, we guide candidates through an uncompromising 3-step career pathway: <strong className="text-neutral-950 font-bold">Get Certified, Get Recognised, and Get Employed</strong> through hands-on dual-screen labs and lifelong placement support.
+              Founded in Tirunelveli with a singular mission: to close the gap between textbook college commerce degrees and the real, fast-paced accounting demands of modern businesses. We transform learners into confident, job-ready accounting professionals through hands-on practice, authorized TEPL curriculum, and lifelong career support.
             </p>
 
             {/* CTA Buttons */}
