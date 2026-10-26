@@ -37,6 +37,15 @@ const COURSE_THEMES: Record<string, {
   titleColor: string;
   accent: string;
 }> = {
+  'job-ready-3-months': {
+    bgHeader: 'bg-[#fff1f2]',
+    borderColor: 'border-[#fecdd3]',
+    tagBg: 'bg-white/90',
+    tagBorder: 'border-[#fda4af]',
+    tagText: 'text-[#e11d48]',
+    titleColor: 'text-[#9f1239]',
+    accent: '#e11d48'
+  },
   // Row 1: Green, Blue, Purple
   'tally-essentials': {
     bgHeader: 'bg-[#eef8eb]',

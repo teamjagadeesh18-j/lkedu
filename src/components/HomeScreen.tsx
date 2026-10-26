@@ -202,6 +202,7 @@ import { WhatsAppIcon } from './ui/WhatsAppIcon';
 import { openEnrollWhatsApp, getWhatsAppUrl } from '../lib/contact';
 import { AnimatedRoadmap } from './ui/AnimatedRoadmap';
 import { AnimatedLabLearning } from './ui/AnimatedLabLearning';
+import { JobReadyShowcaseCard } from './ui/JobReadyShowcaseCard';
 import { Reveal } from './Reveal';
 
 const HOME_COURSE_THEMES: Record<string, {
@@ -213,6 +214,15 @@ const HOME_COURSE_THEMES: Record<string, {
   titleColor: string;
   accent: string;
 }> = {
+  'job-ready-3-months': {
+    bgHeader: 'bg-[#fff1f2]',
+    borderColor: 'border-[#fecdd3]',
+    tagBg: 'bg-white/90',
+    tagBorder: 'border-[#fda4af]',
+    tagText: 'text-[#e11d48]',
+    titleColor: 'text-[#9f1239]',
+    accent: '#e11d48',
+  },
   'tally-essentials': {
     bgHeader: 'bg-[#eef8eb]',
     borderColor: 'border-[#d6ecd0]',
@@ -293,6 +303,23 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
   const [courseCategoryFilter, setCourseCategoryFilter] = useState<string>('All');
 
   const courses = [
+    {
+      id: 'job-ready-3-months',
+      title: 'Job-Ready in 3 Months (TallyPrime + MS-Office)',
+      tag: 'FLAGSHIP DIPLOMA',
+      category: 'Specialized',
+      badge: 'Job Ready 3 Months',
+      desc: 'All-in-one corporate accounting diploma: TallyEssential (Levels 1-3), TallyPrime, and full MS-Office suite with placement.',
+      duration: '3 Months (90 Days)',
+      level: 'Advanced',
+      mode: 'Dual-Screen Lab + Drills',
+      topics: [
+        'TallyEssential & TallyPrime: Vouchers, BRS, Inventory',
+        'MS-Excel for Accounts: Financial formulas, VLOOKUP, Pivot',
+        'GST, E-Way Bill & TDS statutory compliance',
+        'Corporate MS-Word, PowerPoint & Outlook communications'
+      ]
+    },
     {
       id: 'tally-essentials',
       title: 'Tally Essentials',
@@ -440,9 +467,9 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
   ];
 
   const featuredCourses = [
-    courses.find((c) => c.id === 'tally-essentials') || courses[0],
-    courses.find((c) => c.id === 'tally-professional') || courses[1],
-    courses.find((c) => c.id === 'gst-using-tally-prime') || courses[2],
+    courses.find((c) => c.id === 'job-ready-3-months') || courses[0],
+    courses.find((c) => c.id === 'tally-essentials') || courses[1],
+    courses.find((c) => c.id === 'tally-professional') || courses[2],
   ];
 
   const filteredCourses = courseCategoryFilter === 'All'
@@ -497,8 +524,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             {/* Eyebrow Pill */}
             <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-neutral-100/90 border border-neutral-200/80 shadow-xs max-w-full">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse shrink-0" />
-              <span className="font-label-eyebrow text-[10px] sm:text-xs font-bold text-neutral-500 uppercase tracking-wider truncate">
-                INDUSTRY READINESS SYSTEM • TIRUNELVELI
+              <span className="font-label-eyebrow text-[10px] sm:text-xs font-bold text-neutral-700 uppercase tracking-wider truncate">
+                TEPL • INSTITUTE OF TALLY LEARNING • TIRUNELVELI
               </span>
             </div>
 
@@ -514,7 +541,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
 
             {/* Subtitle matching reference size, weight and rhythm */}
             <p className="text-sm sm:text-lg md:text-xl text-neutral-600 font-normal leading-relaxed max-w-2xl text-balance">
-              Build a strong career in accounting through industry-recognised courses powered by{' '}
+              <span className="font-serif italic font-semibold text-neutral-900">Your Better Future In Computerised Accounting.</span> Build a strong career with TallyEssential, TallyPrime & MS-Office powered by{' '}
               <span className="text-secondary font-bold">Tally Education Pvt. Ltd. (TEPL)</span>.
             </p>
 
@@ -706,6 +733,16 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           />
         </Reveal>
       </section>
+
+      {/* =========================================================================
+          2C. JOB READY IN 3 MONTHS - FEATURED BROCHURE ART SHOWCASE
+          ========================================================================= */}
+      <Reveal delay={0.15}>
+        <JobReadyShowcaseCard
+          onOpenCounselor={onOpenCounselor}
+          onNavigate={onNavigate}
+        />
+      </Reveal>
 
       {/* =========================================================================
           3. COURSES SECTION ("Accounting and Tally Courses Built for Real Jobs")
