@@ -277,7 +277,11 @@ export const CertificateVerificationModal: React.FC<CertificateVerificationModal
               <div className="p-6 bg-red-50 rounded-2xl border border-red-200 text-center flex flex-col items-center gap-2">
                 <span className="text-sm font-bold text-red-700">Certificate Record Not Found</span>
                 <p className="text-xs text-red-600 max-w-sm">
-                  Please verify the ID format (e.g. TEPL-TN-2024-8841) or contact our admissions office at lkeduganesh@gmail.com for manual verification.
+                  Please verify the ID format (e.g. TEPL-TN-2024-8841) or contact our admissions office at{' '}
+                  <a href="mailto:lkeduganesh@gmail.com" className="font-semibold underline hover:text-red-800">
+                    lkeduganesh@gmail.com
+                  </a>{' '}
+                  for manual verification.
                 </p>
               </div>
             )}

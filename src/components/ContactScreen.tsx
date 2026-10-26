@@ -9,8 +9,7 @@ import {
   Calendar,
   Building,
   ShieldCheck,
-  ArrowRight,
-  Sparkles
+  ArrowRight
 } from 'lucide-react';
 import { WhatsAppIcon } from './ui/WhatsAppIcon';
 import { AnimatedRoadmap } from './ui/AnimatedRoadmap';
@@ -83,7 +82,7 @@ export const ContactScreen: React.FC = () => {
 
               {/* Journey Narrative Callout */}
               <div className="p-3.5 sm:p-4 rounded-2xl bg-neutral-50 border border-neutral-200/80 flex items-start gap-3 mt-1">
-                <Sparkles className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
                 <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed">
                   <strong className="text-neutral-900 font-bold">From Institute to Dream Job:</strong> Start with an idea, gain hands-on practical skills in our training institute, earn authorized certification, and step directly onto the roadway to your corporate career.
                 </p>
@@ -195,9 +194,12 @@ export const ContactScreen: React.FC = () => {
                   <p className="font-title-sm text-title-sm font-bold text-on-surface">
                     Email Correspondence
                   </p>
-                  <p className="font-body-sm text-body-sm text-on-surface-variant">
-                    lkeduganesh@gmail.com
-                  </p>
+                  <a
+                    href={`mailto:${CONTACT_INFO.email}`}
+                    className="font-body-sm text-body-sm text-on-surface-variant hover:text-black hover:underline transition-colors block"
+                  >
+                    {CONTACT_INFO.email}
+                  </a>
                 </div>
               </div>
 

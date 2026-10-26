@@ -14,7 +14,6 @@ import {
   GraduationCap,
   Mail,
   BookOpen,
-  Sparkles,
   ExternalLink,
   ChevronRight
 } from 'lucide-react';
@@ -520,7 +519,7 @@ export const BlogsScreen: React.FC<BlogsScreenProps> = ({ onNavigate, onOpenCoun
                   <Check className="w-3.5 h-3.5" /> No Obligation
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <Check className="w-3.5 h-3.5" /> TEPL Certified Partner
+                  <Check className="w-3.5 h-3.5" /> TEPL Examination Center
                 </span>
               </div>
             </div>

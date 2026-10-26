@@ -36,12 +36,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenVerify, onOpen
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
               Premier Tally, GST and accounting vocational training institute empowering practical careers in South India.
             </p>
-            <div className="flex items-center gap-2 pt-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-secondary font-medium">
-                <span className="w-2 h-2 rounded-full bg-secondary"></span>
-                TEPL Certified Partner
-              </span>
-            </div>
           </div>
 
           {/* Col 2: Programs */}
@@ -146,7 +140,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenVerify, onOpen
               Tirunelveli Junction, Tirunelveli 627001
             </p>
             <p className="font-body-sm text-body-sm text-on-surface-variant">
-              <span className="font-semibold text-on-surface">Email:</span> lkeduganesh@gmail.com
+              <span className="font-semibold text-on-surface">Email:</span>{' '}
+              <a
+                href={`mailto:${CONTACT_INFO.email}`}
+                className="hover:text-black hover:underline transition-colors"
+              >
+                {CONTACT_INFO.email}
+              </a>
             </p>
             <p className="font-body-sm text-body-sm text-on-surface-variant">
               <span className="font-semibold text-on-surface">Hours:</span> Mon to Sat 10 AM to 7 PM

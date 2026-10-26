@@ -12,7 +12,6 @@ import {
   Calculator,
   Clock,
   ArrowRight,
-  Sparkles,
   Award,
   Check,
   FileText,
@@ -44,7 +43,7 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
     { title: 'Powerful Test Taking Experience', icon: Zap, id: 'test-experience' },
     { title: 'Cross-Platform Support', icon: Layers, id: 'cross-platform' },
     { title: 'Advanced Analytics & Reporting', icon: BarChart3, id: 'analytics' },
-    { title: 'AI-Based Auto Proctoring', icon: Eye, id: 'proctoring' },
+    { title: 'Automated Examination Proctoring', icon: Eye, id: 'proctoring' },
   ];
 
   return (
@@ -112,7 +111,7 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
                 <Check className="w-3.5 h-3.5 text-secondary stroke-[3]" /> 38+ Years of Tally Heritage
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <Check className="w-3.5 h-3.5 text-secondary stroke-[3]" /> AI-Powered Anti-Cheating Proctoring
+                <Check className="w-3.5 h-3.5 text-secondary stroke-[3]" /> Secure Anti-Cheating Exam Proctoring
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Check className="w-3.5 h-3.5 text-secondary stroke-[3]" /> Excel Bulk Question Import
@@ -216,7 +215,7 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
                 <path d="M 110 260 L 110 290 L 70 290 L 150 290 L 110 290" stroke="#94a3b8" strokeWidth="6" strokeLinecap="round" />
                 {/* Main Screen Bezel */}
                 <rect width="220" height="210" rx="14" fill="#0f172a" stroke="#334155" strokeWidth="3" />
-                {/* Camera / AI Proctoring Eye */}
+                {/* Camera / Exam Proctoring Webcam */}
                 <circle cx="110" cy="12" r="3.5" fill="#38bdf8" />
                 <circle cx="110" cy="12" r="1.5" fill="#ffffff" />
 
@@ -524,14 +523,14 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
             </div>
           </Reveal>
 
-          {/* Card 5: AI-Based Auto Proctoring */}
+          {/* Card 5: Automated Examination Proctoring */}
           <Reveal delay={0.15} className="bg-white rounded-3xl p-7 border border-neutral-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
             <div>
               <div className="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-700 flex items-center justify-center mb-4">
                 <Eye className="w-5 h-5" />
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-neutral-900 tracking-tight mb-4">
-                AI-Based Auto Proctoring
+                Automated Examination Proctoring
               </h3>
               <ul className="space-y-3 text-xs sm:text-sm text-neutral-600 leading-relaxed">
                 <li className="flex items-start gap-2.5">
@@ -540,7 +539,7 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
                 </li>
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
-                  <span><strong>AI-Driven Monitoring:</strong> Automated face tracking and multi-person detection for high-volume exam halls.</span>
+                  <span><strong>Live Exam Monitoring:</strong> Continuous session tracking and multi-window detection for high-volume exam halls.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
@@ -553,7 +552,7 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
               </ul>
             </div>
             <div className="pt-4 mt-6 border-t border-neutral-100 text-[11px] font-semibold text-neutral-400">
-              Continuous Webcam AI Surveillance
+              Continuous Proctored Exam Verification
             </div>
           </Reveal>
 
@@ -746,11 +745,11 @@ export const ResourcesScreen: React.FC<ResourcesScreenProps> = ({
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-neutral-900" />
-                AI-Powered Proctored Engine
+                Secure Proctored Exam Engine
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-neutral-900" />
-                Authorized TEPL Partner
+                TEPL Examination Center
               </span>
             </div>
           </Reveal>

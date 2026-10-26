@@ -1293,7 +1293,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <Reveal className="lg:col-span-7 flex flex-col gap-6">
               <div className="inline-flex items-center gap-2">
                 <span className="px-3 py-1 rounded-full bg-surface-container-low font-label-eyebrow text-label-eyebrow font-bold text-secondary uppercase tracking-wider border border-[#E5E7EB]">
-                  TEPL AUTHORIZED PARTNER
+                  TEPL EXAMINATION & CERTIFICATION CENTER
                 </span>
               </div>
 
@@ -1302,7 +1302,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               </h2>
 
               <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                LK Educations is an authorized training partner of Tally Education Pvt. Ltd. (TEPL). Our programs prepare candidates to sit for the direct TEPL online assessment, ensuring credentials that employers across India and the Middle East recognize instantly.
+                LK Educations is an authorized testing and learning center for Tally Education Pvt. Ltd. (TEPL). Our programs prepare candidates to sit for the direct TEPL online assessment, ensuring credentials that employers across India and the Middle East recognize instantly.
               </p>
 
               <div className="space-y-3 pt-2">

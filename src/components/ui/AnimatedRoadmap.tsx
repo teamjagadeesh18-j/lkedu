@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, Briefcase, Award, Monitor, Lightbulb } from 'lucide-react';
+import { CheckCircle2, Briefcase, Award, Monitor, Lightbulb } from 'lucide-react';
 
 interface AnimatedRoadmapProps {
   className?: string;
@@ -265,7 +265,7 @@ export const AnimatedRoadmap: React.FC<AnimatedRoadmapProps> = ({ className = ''
           />
         </g>
 
-        {/* Summit Celebration Sparkles */}
+        {/* Summit Achievement Stars */}
         {[
           { cx: 400, cy: 190, delay: 0 },
           { cx: 550, cy: 140, delay: 0.4 },
@@ -361,7 +361,7 @@ export const AnimatedRoadmap: React.FC<AnimatedRoadmapProps> = ({ className = ''
                   className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 sm:w-56 p-3 bg-neutral-950 text-white rounded-xl shadow-2xl border border-neutral-800 text-left z-30 pointer-events-none"
                 >
                   <p className="text-xs font-bold text-white flex items-center gap-1.5">
-                    <Sparkles className="w-3 h-3 text-emerald-400" />
+                    <CheckCircle2 className="w-3 h-3 text-emerald-400" />
                     <span>{ms.title}</span>
                   </p>
                   <p className="text-[11px] text-neutral-300 mt-1 leading-snug">

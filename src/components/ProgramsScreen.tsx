@@ -13,7 +13,6 @@ import {
   Monitor,
   ShieldCheck,
   Layers,
-  Sparkles,
   BookOpen,
   Users
 } from 'lucide-react';
@@ -436,7 +435,7 @@ export const ProgramsScreen: React.FC<ProgramsScreenProps> = ({
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-neutral-900" />
-                Authorized TEPL Partner
+                TEPL Examination Center
               </span>
             </div>
           </Reveal>

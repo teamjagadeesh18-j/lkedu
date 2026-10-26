@@ -7,7 +7,7 @@ import {
   Users,
   Check,
   Building2,
-  Sparkles,
+  CheckCircle2,
   ArrowRight,
   Phone,
   FileCheck,
@@ -429,7 +429,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
                 {/* Strategic Point 3 */}
                 <div className="bg-surface-container-low rounded-xl p-5 flex flex-col gap-1.5 border border-[#E5E7EB]">
                   <div className="flex items-center gap-2 text-on-surface font-bold font-title-sm text-title-sm">
-                    <Sparkles className="w-5 h-5 text-secondary" />
+                    <Award className="w-5 h-5 text-secondary" />
                     Soft Skills & Interview Readiness
                   </div>
                   <p className="font-body-sm text-body-sm text-on-surface-variant">
@@ -529,7 +529,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
 
                 {/* Mini Footnote Card */}
                 <div className="p-3 bg-surface-container-lowest/80 rounded-lg flex items-center gap-3 text-on-surface-variant font-body-sm text-body-sm border border-[#E5E7EB]">
-                  <Sparkles className="w-5 h-5 text-secondary shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-secondary shrink-0" />
                   <span>100% updated for the latest Tally Prime 4.x features</span>
                 </div>
               </div>
@@ -609,7 +609,7 @@ export const AboutScreen: React.FC<AboutScreenProps> = ({
               <div className="inline-flex items-center gap-2">
                 <span className="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-container font-label-eyebrow text-label-eyebrow font-bold uppercase tracking-wider flex items-center gap-1.5 border border-[#ffb95f]/40">
                   <ShieldCheck className="w-4 h-4" />
-                  TEPL AUTHORIZED ACADEMIC PARTNER
+                  TEPL AUTHORIZED EXAMINATION CENTER
                 </span>
               </div>
               <h2 className="font-headline-lg text-headline-lg text-on-surface font-bold">

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
-  Sparkles,
   Monitor,
   Award,
   FileSpreadsheet,
@@ -706,7 +705,7 @@ export const AnimatedLabLearning: React.FC<AnimatedLabLearningProps> = ({ classN
                     className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-52 sm:w-60 p-3 bg-neutral-950 text-white rounded-xl shadow-2xl border border-neutral-800 text-left z-30 pointer-events-none"
                   >
                     <p className="text-xs font-bold text-white flex items-center gap-1.5">
-                      <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                       <span>{feat.title}</span>
                     </p>
                     <p className="text-[11px] text-neutral-300 mt-1 leading-snug">

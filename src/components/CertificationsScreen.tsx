@@ -89,7 +89,7 @@ export const CertificationsScreen: React.FC<CertificationsScreenProps> = ({
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>Official TEPL Partner Credentials</span>
+                <span>Official TEPL Examination Credentials</span>
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
